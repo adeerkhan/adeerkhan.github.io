@@ -20,3 +20,9 @@ I am an asset integrity engineer with a strong focus on computer vision and mach
 My educational background includes a degree in civil engineering from [Capital University of Science and Technology](https://cust.edu.pk) in Islamabad. Throughout my studies, I have developed a keen interest in implementing computer vision and AI in the field of remote sensing and 3D model generation for intelligent asset management.
 
 "All things excellent are as difficult as they are rare." - Spinoza
+
+**Research Interests**
++Remote Sensing
++Complex Systems
++Building Information Modeling
++Computer Vision
