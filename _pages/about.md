@@ -18,6 +18,9 @@ latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
+I am an asset integrity engineer with a strong focus on computer vision and machine learning. Currently, I work at Softoo Pvt Ltd in collaboration with Abyss Solutions, where I am passionate about leveraging advanced technologies to develop intelligent management solutions.
+
+My educational background includes a degree in civil engineering from Capital University of Science and Technology in Islamabad. Throughout my studies, I have developed a keen interest in implementing computer vision and AI in the field of remote sensing and 3D model generation for intelligent asset management.
 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
