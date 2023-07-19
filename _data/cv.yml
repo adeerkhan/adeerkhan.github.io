@@ -71,13 +71,12 @@
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2016
       items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
+        - Participant of South Asian Quiz Content CMC Quiz Mania - 5 held in Kathmandu, Nepal
+    - year: 2022
       items: 
-        - Max Planck Medal
+        - Awarded Quaid-e-Azam Gold Medal
 
 - title: Academic Interests
   type: nested_list
