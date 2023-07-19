@@ -22,7 +22,7 @@ My educational background includes a degree in civil engineering from [Capital U
 "All things excellent are as difficult as they are rare." - Spinoza
 
 **Research Interests**
- *Remote Sensing
- *Complex Systems
- *Building Information Modeling
- *Computer Vision
+* Remote Sensing
+* Complex Systems
+* Building Information Modeling
+* Computer Vision
