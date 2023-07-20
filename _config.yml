@@ -170,7 +170,7 @@ collections:
   news:
     defaults:
       layout: post
-    output: false
+    output: True
     permalink: /news/:path/
   projects:
     output: true
