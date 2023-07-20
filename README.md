@@ -489,7 +489,7 @@ If the entry matches one of the combinations of the last names and the first nam
 There are several custom bibtex keywords that you can use to affect how the entries are displayed on the webpage:
 
 - `abbr`: Adds an abbreviation to the left of the entry. You can add links to these by creating a venue.yaml-file in the _data folder and adding entries that match.
-- `abstract`: Adds an "Abs" button that expands a hidden text field when clicked to show the abstract text
+- `abstract`: Adds an "Abstract" button that expands a hidden text field when clicked to show the abstract text
 - `arxiv`: Adds a link to the Arxiv website (Note: only add the arxiv identifier here - the link is generated automatically)
 - `bibtex_show`: Adds a "Bib" button that expands a hidden text field with the full bibliography entry
 - `html`: Inserts an "HTML" button redirecting to the user-specified link
