@@ -5,5 +5,5 @@ title: CV
 nav: true
 nav_order: 4
 cv_pdf: CV-Adeer Khan.pdf
-description: This is a description of the page. You can modify it in 'pages/_cv.md'. You can also change or remove the top pdf download button.
+description: You can download my CV from the right Button.
 ---
