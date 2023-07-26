@@ -1,56 +1,76 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Adeer Khan",
+    "label": "Civil Engineer",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "adeersafi@gmail.com",
+    "phone": "(92) 333-5059634",
+    "url": "https://adeerkhan.github.io",
+    "summary": "Motivated towards the implementation of computer vision and Ai in remote sensing and 3d model generation for intelligent infrastructure and urban management.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "Islamabad, Pakistan",
+      "postalCode": "44000",
+      "city": "Islamabad",
+      "countryCode": "PK",
+      "region": "Capital Territory"
     },
     "profiles": [
       {
         "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "username": "AdeerKhan",
+        "url": "https://twitter.com/AdeerKhan"
       }
     ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": [
-        "Relativity"
-      ]
+      "name": "Softoo Pvt. Ltd.",
+      "position": "Asset Integrity Engineer",
+      "url": "https://www.softoo.co",
+      "startDate": "2023-03-16",
+      "endDate": "Present",
+      "summary": "Developed and trained machine learning and computer vision models for automatic 3D point cloud generation from imagery, enabling efficient and accurate inspections for oil and gas remote assets.",
     }
   ],
-  "volunteer": [],
+  "volunteer": [
+    {
+      "name": "Teach for Pakistan School",
+      "position": "Substitute Teacher",
+      "url": "https://www.iteachforpakistan.org",
+      "startDate": "2020-12-02",
+      "endDate": "2021-01-28",
+      "summary": "Delivered a workshop on Social Uplift through Popular Education Pedagogy. Substitute teacher of junior classes. Held art challenges, spelling bee, and general knowledge and science quiz competitions in the younger classes.",
+    }
+    {
+      "name": "Volunteer",
+      "position": "The NGO World Foundation",
+      "url": "https://www.thengoworld.com",
+      "startDate": "2019-06-01",
+      "endDate": "2021-07-30",
+      "summary": "Raising awareness about youth volunteering opportunities across schools. Attended multiple workshops on Reporting and Documenting Volunteer Activities. Started clean-up campaign at Ayub Park, Rawalpindi.",
+    }
+  ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "",
+      "institution": "Capital University of Science and Technology, Islamabad, Pakistan",
+      "url": "https://www.CUST.edu.pk",
+      "area": "Civil Engineering",
+      "studyType": "Bachelor of Science",
+      "startDate": "2018-09-01",
+      "endDate": "2022-07-29",
+      "score": "CGPA: 3.88/4.0 (Gold Medalist)",
       "courses": [
-        "Theory of Relativity"
+        "A simple and sustainable approach to structural health monitoring of structures - Final Year Project"
       ]
     }
   ],
   "awards": [
+    {
+      "title": "Nobel Prize in Physics",
+      "date": "1921-11-01",
+      "awarder": "Royal Swedish Academy of Sciences",
+      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+    }
     {
       "title": "Nobel Prize in Physics",
       "date": "1921-11-01",
@@ -63,7 +83,7 @@
   "skills": [],
   "languages": [
     {
-      "language": "German",
+      "language": "Pashto",
       "fluency": "Native speaker"
     },
     {
