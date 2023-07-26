@@ -23,6 +23,6 @@ My educational background includes a degree in civil engineering from [Capital U
 
 **Research Interests**
 * Remote Sensing
-* Complex Systems
+* Complex Infrastructure Systems
 * Building Information Modeling
 * Computer Vision
