@@ -44,7 +44,24 @@
       "startDate": "2023-03-16",
       "endDate": "Present",
       "summary": "Developed and trained machine learning and computer vision models for automatic 3D point cloud generation from imagery, enabling efficient and accurate inspections for oil and gas remote assets."
-    }
+    },
+    {
+      "name": "McKinsey & Company",
+      "position": "Apprenticeship",
+      "url": "https://www.credly.com/badges/74ee39f8-bc2a-49d1-8d5c-3d0b26705ce0/linked_in_profile",
+      "startDate": "2022-11-02",
+      "endDate": "2023-07-31",
+      "summary": "Developed expertise in strategic thinking, problem-solving, and decision-making through rigorous case studies and practical exercises."
+    },
+    {
+      "name": "IEEE CUST Student Branch",
+      "position": "Graphics Head",
+      "url": "https://www.facebook.com/IEEECUST/",
+      "startDate": "2022-11-02",
+      "endDate": "2023-07-31",
+      "summary": "Led a team of graphic designers to manage IEEE Social Media and other graphical works. Organized over 40 webinars in semesters in coordination with other societies. Organized mega-events such as Al-Funoon Gala and ICSEC. Redesigned IEEE Section Branch Affinity groups logos."
+    },
+
   ],
   "volunteer": [
     {
@@ -131,14 +148,49 @@
       "name": "Machine Learning Specialization",
       "date": "2023-01-09",
       "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
-      "issuer": "Stanford University",
-      "summary": "An overall best achiever of the university based on extra and co-curricular activities."
+      "issuer": "Stanford University"
     },
     {
-      "name": "Machine Learning Specialization",
-      "date": "2023-01-09",
-      "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
+      "name": "Introduction to Computer Vision and Image Processing",
+      "date": "2023-03-23",
+      "url": "https://coursera.org/verify/LDQEFDG568BT",
+      "issuer": "IBM"
+    },
+    {
+      "name": "Imagery, Automation, and Applications",
+      "date": "2023-03-10",
+      "url": "https://coursera.org/verify/AXZLQUZYG4AJ",
+      "issuer": "UC, Davis"
+    },
+    {
+      "name": "Introduction to Deep Learning & Neural Networks with Keras",
+      "date": "2023-02-21",
+      "url": "https://coursera.org/verify/QUJR8SK2629R",
+      "issuer": "IBM"
+    },
+    {
+      "name": "Neural Networks and Deep Learning",
+      "date": "2023-03-01",
+      "url": "https://coursera.org/verify/FY9X9NYZ7NVE",
       "issuer": "Stanford University"
+    },
+    {
+      "name": "How to Write and Publish a Scientific Paper",
+      "date": "2020-07-31",
+      "url": "http://coursera.org/verify/NQXEUKPRCVLA",
+      "issuer": "École Polytechnique"
+    },
+    {
+      "name": "Introduction to Programming with MATLAB",
+      "date": "2020-09-4",
+      "url": "http://coursera.org/verify/6F2V9KMHKKYV",
+      "issuer": "Vanderbilt University"
+    },
+    {
+      "name": "Revit for Architectural Design Exam Prep",
+      "date": "2020-08-22",
+      "url": "http://coursera.org/verify/2WQFGKHTQFZ5",
+      "issuer": "Autodesk"
     }
   ],
   "publications": [],
@@ -153,13 +205,16 @@
       "name": "Deep Learning"
     },
     {
-      "name": "3d Modeling"
+      "name": "Application Deployment"
     },
     {
       "name": "GIS Analyst"
     },
     {
       "name": "Asset Integrity"
+    },
+    {
+      "name": "3d Modeling"
     },
     {
       "name": "Prompt Engineering"
