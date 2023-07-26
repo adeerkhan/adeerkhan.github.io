@@ -142,7 +142,21 @@
     }
   ],
   "publications": [],
-  "skills": [],
+  "skills": [
+    {
+      "title": "Machine Learning Specialization",
+      "date": "2023-01-09",
+      "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
+      "awarder": "Stanford Online",
+      "summary": "An overall best achiever of the university based on extra and co-curricular activities."
+    },
+    {
+      "title": "Machine Learning Specialization",
+      "date": "2023-01-09",
+      "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
+      "awarder": "Stanford Online"
+    }
+  ],
   "languages": [
     {
       "language": "Pashto",
