@@ -65,16 +65,16 @@
   ],
   "volunteer": [
     {
-      "name": "Teach for Pakistan School",
       "position": "Substitute Teacher",
+      "organization": "Teach for Pakistan School",
       "url": "https://www.iteachforpakistan.org",
       "startDate": "2020-12-02",
       "endDate": "2021-01-28",
       "summary": "Delivered a workshop on Social Uplift through Popular Education Pedagogy. Substitute teacher of junior classes. Held art challenges, spelling bee, and general knowledge and science quiz competitions in the younger classes."
     },
     {
-      "name": "Volunteer",
-      "position": "The NGO World Foundation",
+      "position": "Volunteer",
+      "organization": "The NGO World Foundation",
       "url": "https://www.thengoworld.com",
       "startDate": "2019-06-01",
       "endDate": "2021-07-30",

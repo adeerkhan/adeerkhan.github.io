@@ -1,6 +1,11 @@
 <style>
   /* Change font size for list-group-category */
   .list-group-category a {
+    font-size: 14px; /* You can adjust the font size as needed */
+  }
+
+  /* Change font size for list-group-name */
+  .list-group-name {
     font-size: 12px; /* You can adjust the font size as needed */
   }
 </style>
@@ -24,12 +29,9 @@
           {% endfor %}
           <td colspan="{{ i }}" class="list-group-category">
             <a href="{{ content.url | default: # }}">{{ content.name }}</a>
+            <br>
+            <b class="list-group-name">{{ content.issuer }}</b> - <span class="list-group-date">{{ content.date }}</span>
           </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="list-group-name"><b>{{ content.issuer }}</b></td>
-          <td class="list-group-name">{{ content.date }}</td>
         </tr>
       </tbody>
     </table>
