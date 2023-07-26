@@ -128,33 +128,41 @@
   ],
   "certificates": [
     {
-      "title": "Machine Learning Specialization",
+      "name": "Machine Learning Specialization",
       "date": "2023-01-09",
       "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
-      "awarder": "Stanford Online",
+      "issuer": "Stanford University",
       "summary": "An overall best achiever of the university based on extra and co-curricular activities."
     },
     {
-      "title": "Machine Learning Specialization",
+      "name": "Machine Learning Specialization",
       "date": "2023-01-09",
       "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
-      "awarder": "Stanford Online"
+      "issuer": "Stanford University"
     }
   ],
   "publications": [],
   "skills": [
     {
-      "title": "Machine Learning Specialization",
-      "date": "2023-01-09",
-      "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
-      "awarder": "Stanford Online",
-      "summary": "An overall best achiever of the university based on extra and co-curricular activities."
+      "name": "Machine Learning"
     },
     {
-      "title": "Machine Learning Specialization",
-      "date": "2023-01-09",
-      "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
-      "awarder": "Stanford Online"
+      "name": "Computer Vision"
+    },
+    {
+      "name": "Deep Learning"
+    },
+    {
+      "name": "3d Modeling"
+    },
+    {
+      "name": "GIS Analyst"
+    },
+    {
+      "name": "Asset Integrity"
+    },
+    {
+      "name": "Prompt Engineering"
     }
   ],
   "languages": [
@@ -175,7 +183,20 @@
       "fluency": "Beginner"
     }
   ],
-  "interests": [],
+  "interests": [
+    {
+      "name": "Gaming"
+    },
+    {
+      "name": "Reading"
+    },
+    {
+      "name": "History & Politics"
+    },
+    {
+      "name": "Philosophy"
+    }
+  ],
   "references": [],
   "projects": []
 }
