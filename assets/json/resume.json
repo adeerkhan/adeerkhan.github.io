@@ -6,7 +6,7 @@
     "email": "adeersafi@gmail.com",
     "phone": "(92) 333-5059634",
     "url": "https://adeerkhan.github.io",
-    "research interest": "Motivated towards the implementation of computer vision and Ai in remote sensing and 3d model generation for intelligent infrastructure and urban management.",
+    "research Interest": "Motivated towards the implementation of computer vision and Ai in remote sensing and 3d model generation for intelligent infrastructure and urban management.",
     "location": {
       "address": "Islamabad, Pakistan",
       "postalCode": "44000",
@@ -22,6 +22,20 @@
       }
     ]
   },
+  "education": [
+    {
+      "institution": "Capital University of Science and Technology, Islamabad, Pakistan",
+      "url": "https://www.CUST.edu.pk",
+      "area": "Civil Engineering",
+      "studyType": "Bachelor of Science",
+      "startDate": "2018-09-01",
+      "endDate": "2022-07-29",
+      "score": "CGPA: 3.88/4.0 (Gold Medalist)",
+      "courses": [
+        "A simple and sustainable approach to structural health monitoring of structures - Final Year Project"
+      ]
+    }
+  ],
   "work": [
     {
       "name": "Softoo Pvt. Ltd.",
@@ -50,35 +64,83 @@
       "summary": "Raising awareness about youth volunteering opportunities across schools. Attended multiple workshops on Reporting and Documenting Volunteer Activities. Started clean-up campaign at Ayub Park, Rawalpindi."
     }
   ],
-  "education": [
-    {
-      "institution": "Capital University of Science and Technology, Islamabad, Pakistan",
-      "url": "https://www.CUST.edu.pk",
-      "area": "Civil Engineering",
-      "studyType": "Bachelor of Science",
-      "startDate": "2018-09-01",
-      "endDate": "2022-07-29",
-      "score": "CGPA: 3.88/4.0 (Gold Medalist)",
-      "courses": [
-        "A simple and sustainable approach to structural health monitoring of structures - Final Year Project"
-      ]
-    }
-  ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "Awarded Quaid-e-Azam Gold Medal",
+      "date": "2022-12-15",
+      "awarder": "Capital University of Science and Technology",
+      "summary": "An overall best achiever of the university based on extra and co-curricular activities."
     },
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "National Level Distinction in Final Year Design Project",
+      "date": "2023-01-16",
+      "awarder": "Pakistan Engineering Council",
+      "summary": "Awarded 2nd prize at Pakistan Engineering Council’s Engineering Capstone Expo 2022."
+    },
+    {
+      "title": "South Asian Quiz Content CMC Quiz Mania - 5 Participant",
+      "date": "2016-10-06",
+      "awarder": "Accretive Media (Pvt) Ltd.",
+      "summary": "Went to Kathmandu, Nepal, to represent Pakistan in South Asian Quiz Content CMC Quiz Mania - 5. The entire contest was telecasted on Nepal Tv."
+    },
+    {
+      "title": "Research Excellence Award",
+      "date": "2022-07-13",
+      "awarder": "Capital University of Science and Technology",
+      "summary": "Based on excellent research achievement at such a young age, was designated as the chair of the Research Excellence Award Ceremony (REA) - 2021."
+    },
+    {
+      "title": "Chancellor's Honor Roll",
+      "date": "2022-07-29",
+      "awarder": "Capital University of Science and Technology",
+      "summary": "Awarded two times for securing 4.0 GPA in two semesters of the Civil Engineering Degree."
+    },
+    {
+      "title": "Distinction in Final Year Design Project",
+      "date": "2022-09-08",
+      "awarder": "Capital University of Science and Technology",
+      "summary": "Awarded 1st Position at the 10th Industrial Open House held by the university."
+    },
+    {
+      "title": "Graphics Head of 16th International Conference on Emerging Technologies (ICET 2021)",
+      "date": "2021-12-23",
+      "awarder": "Capital University of Science and Technology",
+      "summary": "Supervised a team to professionally undertake the graphical work of the conference."
+    },
+    {
+      "title": "Proofreader of the International Conference on Advances in Mechanical Engineering",
+      "date": "2022-08-25",
+      "awarder": "Capital University of Science and Technology",
+      "summary": "Proofreading and structuring of the conference proceedings."
+    },
+    {
+      "title": "Runner Up at SUPARCO World Space Week 2022 Pakistan",
+      "date": "2023-01-12",
+      "awarder": "Pakistan Space & Upper Atmosphere Research Commission",
+      "summary": "Secured 2nd position in SDG Video Contest on Sustainable Human Footprint."
+    },
+    {
+      "title": "FYP Project Displayed at Rawalpindi Chamber Of Commerce And Industry Expo 2022",
+      "date": "2022-04-25",
+      "awarder": "Rawalpindi Chamber Of Commerce And Industry",
+      "summary": "The Project was presented to entrepreneurs, ambassadors, and industry professionals."
     }
   ],
-  "certificates": [],
+  "certificates": [
+    {
+      "title": "Machine Learning Specialization",
+      "date": "2023-01-09",
+      "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
+      "awarder": "Stanford Online",
+      "summary": "An overall best achiever of the university based on extra and co-curricular activities."
+    },
+    {
+      "title": "Machine Learning Specialization",
+      "date": "2023-01-09",
+      "url": "https://coursera.org/verify/specialization/HE3TV38XAEMB",
+      "awarder": "Stanford Online"
+    }
+  ],
   "publications": [],
   "skills": [],
   "languages": [
