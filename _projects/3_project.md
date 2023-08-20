@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Talk with Images
-description: A Streamlit application  that allows users to ask questions about images they upload and receive insightful responses from  LangChain and OpenAI GPT based AI conversational agent.
-img: assets/img/talk_with_image.jpg
-redirect: https://github.com/adeerkhan/talk-with-image
+title: Podcast Summarizer
+description: OpenAI GPT based podcast summarizer with backend cloud deployed and frontend deployed on streamlit. Add your favorite podcast RSS link to get summary and highlights.
+img: assets/img/podcast_sum.jpg
+redirect: https://podcast-summarize.streamlit.app
 importance: 1
 category: work
 ---
