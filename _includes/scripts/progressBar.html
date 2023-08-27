@@ -53,7 +53,7 @@
     let navbarHeight = $("#navbar").outerHeight(true);
     $("body").css({ "padding-top": navbarHeight });
     $("progress-container").css({ "padding-top": navbarHeight });
-    progressBar.css({ top: navbarHeight });
+    progressBar.css({ top: navbarHeight, height: "15px" }); // Adjust the height here
     progressBar.attr({
       max: getDistanceToScroll(),
       value: getCurrentScrollPosition(),
@@ -73,7 +73,7 @@
   }
   // The scroll ratio equals the percentage to resize the bar
   function getWidthPercentage() {
-    return (getCurrentScrollPosition() / getDistanceToScroll()) * 500;
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
   }
 </script>
 
