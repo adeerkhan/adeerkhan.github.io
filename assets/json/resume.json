@@ -4,8 +4,8 @@
     "profession": "Civil Engineer",
     "image": "",
     "email": "adeersafi at gmail.com",
-    "url": "https://adeerkhan.github.io",
-    "research Interest": "Motivated towards the implementation of computer vision and Ai in remote sensing and 3d model generation for intelligent infrastructure and urban management.",
+    "url": "https://www.linkedin.com/in/adeerkhan/",
+    "research Interest": "Motivated towards the implementation of computer vision and Ai in remote sensing and automated 3d model generation for intelligent infrastructure and urban management.",
     "location": {
       "address": "Islamabad, Pakistan",
       "postalCode": "44000",
@@ -45,6 +45,14 @@
       "summary": "Developed and trained machine learning and computer vision models for automatic 3D point cloud generation from imagery, enabling efficient and accurate inspections for oil and gas remote assets."
     },
     {
+      "name": "The Sparks Foundation (TSF)",
+      "position": "Business Analytics Intern",
+      "url": "https://www.thesparksfoundationsingapore.org",
+      "startDate": "2022-08-02",
+      "endDate": "Present",
+      "summary": "Developing an AI-based stock market prediction system and showcasing real-time forecasts through a Streamlit front-end dashboard."
+    },
+    {
       "name": "McKinsey & Company",
       "position": "Apprenticeship",
       "url": "https://www.credly.com/badges/74ee39f8-bc2a-49d1-8d5c-3d0b26705ce0/linked_in_profile",
@@ -63,6 +71,14 @@
 
   ],
   "volunteer": [
+    {
+      "position": "Open Source Contributor",
+      "organization": "Aya: An Open Science Initiative",
+      "url": "https://txt.cohere.com/aya-multilingual/",
+      "startDate": "2023-07-02",
+      "endDate": "Present",
+      "summary": "Actively contributing to the Aya Multilingual project to enhance and democratize language technology, with a focus on advancing Pashto and Urdu languages."
+    },
     {
       "position": "Substitute Teacher",
       "organization": "Teach for Pakistan School",
