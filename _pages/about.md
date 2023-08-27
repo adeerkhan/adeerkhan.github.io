@@ -17,7 +17,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 I am an asset integrity engineer with a strong focus on computer vision and machine learning. Currently, I work at [Softoo Pvt](https://softoo.co) Ltd in collaboration with [Abyss Solutions](https://abysssolutions.co), where I am passionate about leveraging advanced technologies to develop intelligent management solutions. My educational background includes a degree in civil engineering from [Capital University of Science and Technology](https://cust.edu.pk) in Islamabad. 
 
-Combining my interdisciplinary background, I aim to blend Natural Language Processing and Computer Vision with geoinformatics for innovative infrastructure management. Envisioning data-driven urban planning that tackles sprawl and sustainability challenges, I intend to create a framework that optimizes both infrastructure and community well-being. With a strong foundation in civil engineering, a commitment to continuous learning, and a passion for innovation.
+Leveraging my interdisciplinary background, I aspire to seamlessly integrate Natural Language Processing and Computer Vision with geoinformatics to revolutionize infrastructure management. I envision practical solutions  that tackle sustainability challenges, optimizing both infrastructure and community well-being. With a strong civil engineering foundation, a commitment to learning, and a passion for innovation, I'm dedicated to making a positive impact. 
 
 "All things excellent are as difficult as they are rare." - Spinoza
 
