@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started Data Science & Business Analytics internship at [Sparks Foundation (TSF)] (https://www.thesparksfoundationsingapore.org).
+Started Data Science & Business Analytics internship at [Sparks Foundation (TSF)](https://www.thesparksfoundationsingapore.org).
