@@ -500,11 +500,12 @@ footer.sticky-bottom {
 }
 
 
-// Projects
+
 
 .projects {
   a {
     text-decoration: none;
+    text-transform: capitalize;
 
     &:hover {
       .card-title {
