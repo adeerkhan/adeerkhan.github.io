@@ -10,7 +10,11 @@
         {%- if project.img %}
         {%- include figure.html
           path=project.img
-          alt="project thumbnail" -%}
+          alt="project thumbnail"
+          class="card-image" 
+          width="250" <!-- Set your desired width -->
+          height="187.5" <!-- Set your desired height, maintaining the same aspect ratio -->
+        -%}
         {%- endif %}
         <div class="card-body">
           <h2 class="card-title text-lowercase">{{ project.title }}</h2>
