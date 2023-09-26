@@ -505,7 +505,7 @@ footer.sticky-bottom {
 .projects {
   a {
     text-decoration: none;
-    text-transform: none;
+    text-transform: capitalize;
 
     &:hover {
       .card-title {
