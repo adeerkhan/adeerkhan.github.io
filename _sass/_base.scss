@@ -505,11 +505,9 @@ footer.sticky-bottom {
 .projects {
   a {
     text-decoration: none;
-    text-transform: capitalize;
 
     &:hover {
       .card-title {
-        text-transform: capitalize;
         color: var(--global-theme-color);
       }
     }
