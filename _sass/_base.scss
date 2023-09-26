@@ -509,6 +509,7 @@ footer.sticky-bottom {
 
     &:hover {
       .card-title {
+        text-transform: capitalize;
         color: var(--global-theme-color);
       }
     }
@@ -521,6 +522,7 @@ footer.sticky-bottom {
   }
 
   .card-item {
+    
     width: auto;
     margin-bottom: 10px;
 
