@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Adeer Khan",
-    "profession": "Civil Engineer",
+    "profession": "Machine Learning Engineer",
     "image": "",
     "email": "adeersafi at gmail.com",
     "url": "https://www.linkedin.com/in/adeerkhan/",
@@ -41,16 +41,16 @@
       "position": "Asset Integrity Engineer",
       "url": "https://www.softoo.co",
       "startDate": "2023-03-16",
-      "endDate": "Present",
+      "endDate": "2023-08-16",
       "summary": "Developed and trained machine learning and computer vision models for automatic 3D point cloud generation from imagery, enabling efficient and accurate inspections for oil and gas remote assets."
     },
     {
-      "name": "The Sparks Foundation (TSF)",
-      "position": "Business Analytics Intern",
-      "url": "https://www.thesparksfoundationsingapore.org",
-      "startDate": "2023-08-02",
+      "name": "Joyn Group Pvt. Ltd.",
+      "position": "Data Science Intern ",
+      "url": "https://Joyngroup.com",
+      "startDate": "2023-08-23",
       "endDate": "Present",
-      "summary": "Developing an AI-based stock market prediction system and showcasing real-time forecasts through a Streamlit front-end dashboard."
+      "summary": "Engaged in the development of an Urdu audio transcription model through the OpenAI Whisper model and Mozilla dataset for quotation generation, deployed through Amazon AWS."
     },
     {
       "name": "McKinsey & Company",

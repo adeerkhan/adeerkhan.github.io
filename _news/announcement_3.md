@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started working as Data Scientist at [Joyn Group Pvt. Ltd.](https://Joyngroup.com).
+Started working as Data Science Intern at [Joyn Group Pvt. Ltd.](https://Joyngroup.com).
