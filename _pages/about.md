@@ -27,3 +27,4 @@ Leveraging my interdisciplinary background, I aspire to seamlessly integrate Nat
 * Building Information Modeling
 * Computer Vision
 * Natural Language Processing
+
