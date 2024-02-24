@@ -23,6 +23,18 @@
   },
   "education": [
     {
+      "institution": "Korea Advanced Institute of Science & Technology (KAIST), Daejeon, South Korea",
+      "url": "https://www.kaist.ac.kr/kr/",
+      "area": "Civil & Environmental Engineering",
+      "studyType": "Master of Science",
+      "startDate": "2024-02-26",
+      "endDate": "Ongoing",
+      "score": "-",
+      "courses": [
+        "Deep Learning, IT for Smart City, Transportation System Analysis and Operations, Smart and Green Environmental Design"
+      ]
+    },
+    {
       "institution": "Capital University of Science and Technology, Islamabad, Pakistan",
       "url": "https://www.CUST.edu.pk",
       "area": "Civil Engineering",
