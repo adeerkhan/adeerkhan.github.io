@@ -16,6 +16,8 @@ export function SmoothCursor() {
     if (!window.matchMedia("(pointer: fine)").matches) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    document.documentElement.classList.add("no-cursor");
+
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
     };
@@ -47,6 +49,7 @@ export function SmoothCursor() {
     raf = requestAnimationFrame(animate);
 
     return () => {
+      document.documentElement.classList.remove("no-cursor");
       window.removeEventListener("mousemove", onMove);
       targets.forEach((el) => {
         el.removeEventListener("mouseenter", onEnter);

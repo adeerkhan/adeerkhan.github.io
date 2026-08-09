@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 interface EducationCardProps {
   schoolName: string;
   subHeader: string;
   duration: string;
   grade?: string;
+  schoolLogo?: string;
   desc?: string;
   descBullets?: string[];
 }
@@ -12,17 +15,31 @@ export function EducationCard({
   subHeader,
   duration,
   grade,
+  schoolLogo,
   desc,
   descBullets,
 }: EducationCardProps) {
   return (
     <article className="border border-terminal-border bg-terminal-surface p-6 transition-colors duration-300 hover:border-terminal-signal">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
-        <div>
-          <h3 className="font-mono text-xl font-bold uppercase text-terminal-text">
-            {schoolName}
-          </h3>
-          <p className="mt-2 text-sm text-terminal-soft">{subHeader}</p>
+        <div className="flex items-start gap-4">
+          {schoolLogo ? (
+            <div className="relative h-10 w-10 shrink-0 border border-terminal-border bg-terminal-bg p-1">
+              <Image
+                src={schoolLogo}
+                alt={`${schoolName} logo`}
+                fill
+                className="object-contain p-1"
+                sizes="40px"
+              />
+            </div>
+          ) : null}
+          <div>
+            <h3 className="font-mono text-xl font-bold uppercase text-terminal-text">
+              {schoolName}
+            </h3>
+            <p className="mt-2 text-sm text-terminal-soft">{subHeader}</p>
+          </div>
         </div>
         {grade ? (
           <span className="w-fit border border-terminal-signal px-2 py-0.5 font-body text-xs uppercase text-terminal-signal">

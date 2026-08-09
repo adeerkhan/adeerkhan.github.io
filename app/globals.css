@@ -133,6 +133,11 @@ body {
   overflow-x: hidden;
 }
 
+.no-cursor,
+.no-cursor * {
+  cursor: none !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
