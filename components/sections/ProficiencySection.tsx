@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
-import { ProgressBar } from "@/components/primitives/ProgressBar";
+import { Progress } from "@/components/ui/progress";
 import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SectionTitle } from "@/components/primitives/SectionTitle";
 import { proficiency } from "@/data/proficiency";
@@ -33,7 +33,10 @@ export function ProficiencySection() {
                 {item.percentage}%
               </span>
             </div>
-            <ProgressBar value={item.percentage} active={isInView} />
+            <Progress
+              value={isInView ? item.percentage : 0}
+              aria-label={`${item.percentage}%`}
+            />
           </div>
         ))}
       </div>

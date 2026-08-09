@@ -19,123 +19,173 @@ export function GridSwizzle() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const grid = document.createElement("canvas");
+    const gctx = grid.getContext("2d");
+
     let width = 0;
     let height = 0;
-    let faint = "rgba(255,255,255,0.025)";
+    let color = "rgba(255,255,255,0.03)";
 
-    const readColor = (name: string, fallback: string) =>
+    const readColor = () =>
       getComputedStyle(document.documentElement)
-        .getPropertyValue(name)
-        .trim() || fallback;
+        .getPropertyValue("--terminal-grid")
+        .trim() || color;
 
-    const pageHeight = () =>
-      Math.max(
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-        window.innerHeight,
-      );
-
-    const resize = () => {
-      const dpr = window.devicePixelRatio || 1;
-      width = window.innerWidth;
-      height = pageHeight();
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    };
-
-    let lastClientX = 0;
-    let lastClientY = 0;
     const mouse = { x: -9999, y: -9999 };
     const pos = { x: -9999, y: -9999 };
+    let lastClientX = 0;
+    let lastClientY = 0;
 
-    const onMove = (e: MouseEvent) => {
-      lastClientX = e.clientX;
-      lastClientY = e.clientY;
-      mouse.x = e.clientX + window.scrollX;
-      mouse.y = e.clientY + window.scrollY;
-    };
-
-    const syncScroll = () => {
-      mouse.x = lastClientX + window.scrollX;
-      mouse.y = lastClientY + window.scrollY;
-    };
-
-    const warp = (x: number, y: number, phase: number) => {
+    const warp = (x: number, y: number) => {
       const dx = x - pos.x;
       const dy = y - pos.y;
       const d = Math.hypot(dx, dy);
       if (d >= RADIUS) return { x, y };
       const t = d / RADIUS;
       const falloff = (1 - t) * (1 - t);
-      const a = Math.atan2(dy, dx) + t * 2.4 + Math.sin(phase + t * 6) * 0.8;
+      const a = Math.atan2(dy, dx) + t * 2.4;
       const amount = AMPLITUDE * falloff;
       return { x: x + Math.cos(a) * amount, y: y + Math.sin(a) * amount };
     };
 
-    const draw = (phase: number) => {
-      ctx.clearRect(0, 0, width, height);
+    const inRange = (x: number, y: number) => {
+      const dx = x - pos.x;
+      const dy = y - pos.y;
+      return dx * dx + dy * dy <= RADIUS * RADIUS;
+    };
 
-      ctx.strokeStyle = faint;
-      ctx.lineWidth = 1;
+    const paintGrid = () => {
+      if (!gctx) return;
+      const dpr = window.devicePixelRatio || 1;
+      grid.width = Math.floor(width * dpr);
+      grid.height = Math.floor(height * dpr);
+      gctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      gctx.strokeStyle = color;
+      gctx.lineWidth = 1;
       for (let gx = 0; gx <= width; gx += CELL) {
-        ctx.beginPath();
+        gctx.beginPath();
         for (let gy = 0; gy <= height; gy += CELL) {
-          const p = warp(gx, gy, phase);
-          if (gy === 0) ctx.moveTo(p.x, p.y);
-          else ctx.lineTo(p.x, p.y);
+          if (gy === 0) gctx.moveTo(gx, gy);
+          else gctx.lineTo(gx, gy);
+        }
+        gctx.stroke();
+      }
+      for (let gy = 0; gy <= height; gy += CELL) {
+        gctx.beginPath();
+        for (let gx = 0; gx <= width; gx += CELL) {
+          if (gx === 0) gctx.moveTo(gx, gy);
+          else gctx.lineTo(gx, gy);
+        }
+        gctx.stroke();
+      }
+    };
+
+    const draw = () => {
+      if (!gctx) return;
+      ctx.clearRect(0, 0, width, height);
+      ctx.drawImage(grid, 0, 0, width, height);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1;
+
+      const gx0 = Math.max(0, Math.floor((pos.x - RADIUS) / CELL)) * CELL;
+      const gy0 = Math.max(0, Math.floor((pos.y - RADIUS) / CELL)) * CELL;
+      const gx1 = Math.min(width, Math.ceil((pos.x + RADIUS) / CELL) * CELL);
+      const gy1 = Math.min(height, Math.ceil((pos.y + RADIUS) / CELL) * CELL);
+      if (gx1 <= gx0 || gy1 <= gy0) return;
+
+      for (let gx = gx0; gx <= gx1; gx += CELL) {
+        ctx.beginPath();
+        for (let gy = gy0; gy <= gy1; gy += CELL) {
+          const p1 = warp(gx, gy);
+          const p2 = warp(gx, gy + CELL);
+          if (inRange(gx, gy) || inRange(gx, gy + CELL)) {
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+          }
         }
         ctx.stroke();
       }
-      for (let gy = 0; gy <= height; gy += CELL) {
+      for (let gy = gy0; gy <= gy1; gy += CELL) {
         ctx.beginPath();
-        for (let gx = 0; gx <= width; gx += CELL) {
-          const p = warp(gx, gy, phase);
-          if (gx === 0) ctx.moveTo(p.x, p.y);
-          else ctx.lineTo(p.x, p.y);
+        for (let gx = gx0; gx <= gx1; gx += CELL) {
+          const p1 = warp(gx, gy);
+          const p2 = warp(gx + CELL, gy);
+          if (inRange(gx, gy) || inRange(gx + CELL, gy)) {
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+          }
         }
         ctx.stroke();
       }
     };
 
     let raf = 0;
-    const animate = () => {
+    let scheduled = false;
+    const requestDraw = () => {
+      if (scheduled) return;
+      scheduled = true;
+      raf = requestAnimationFrame(() => {
+        scheduled = false;
+        draw();
+      });
+    };
+
+    const onMove = (e: MouseEvent) => {
+      lastClientX = e.clientX;
+      lastClientY = e.clientY;
+      mouse.x = lastClientX + window.scrollX;
+      mouse.y = lastClientY + window.scrollY;
       pos.x += (mouse.x - pos.x) * LERP;
       pos.y += (mouse.y - pos.y) * LERP;
-      draw(performance.now() / 1000);
-      raf = requestAnimationFrame(animate);
+      requestDraw();
     };
 
-    let lastHeight = pageHeight();
-    const maybeResize = () => {
-      const ph = pageHeight();
-      if (ph !== lastHeight || width !== window.innerWidth) {
-        lastHeight = ph;
-        resize();
-      }
+    const onScroll = () => {
+      pos.x = lastClientX + window.scrollX;
+      pos.y = lastClientY + window.scrollY;
+      requestDraw();
     };
 
-    resize();
-    faint = readColor("--terminal-grid", faint);
-    const observer = new MutationObserver(() => {
-      faint = readColor("--terminal-grid", faint);
-    });
-    observer.observe(document.documentElement, { attributes: true });
+    const onTheme = () => {
+      color = readColor();
+      paintGrid();
+      draw();
+    };
 
+    const rebuild = () => {
+      const w = window.innerWidth;
+      const h = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight,
+        window.innerHeight,
+      );
+      if (w === width && h === height) return;
+      width = w;
+      height = h;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      color = readColor();
+      paintGrid();
+      draw();
+    };
+
+    const parent = canvas.parentElement;
+    const ro = new ResizeObserver(() => rebuild());
+    if (parent) ro.observe(parent);
     window.addEventListener("mousemove", onMove);
-    window.addEventListener("scroll", syncScroll);
-    window.addEventListener("resize", maybeResize);
-    const timer = window.setInterval(maybeResize, 700);
-    raf = requestAnimationFrame(animate);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("themechange", onTheme);
+    rebuild();
 
     return () => {
-      observer.disconnect();
+      ro.disconnect();
       window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("scroll", syncScroll);
-      window.removeEventListener("resize", maybeResize);
-      window.clearInterval(timer);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("themechange", onTheme);
       cancelAnimationFrame(raf);
     };
   }, []);

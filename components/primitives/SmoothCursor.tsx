@@ -1,16 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const DOT_SMOOTHNESS = 0.2;
 const RING_SMOOTHNESS = 0.1;
 
 export function SmoothCursor() {
-  const mouse = useRef({ x: -100, y: -100 });
-  const dot = useRef({ x: -100, y: -100 });
-  const ring = useRef({ x: -100, y: -100 });
-  const [pos, setPos] = useState({ dot: { x: -100, y: -100 }, ring: { x: -100, y: -100 } });
-  const [hover, setHover] = useState(false);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!window.matchMedia("(pointer: fine)").matches) return;
@@ -18,34 +15,54 @@ export function SmoothCursor() {
 
     document.documentElement.classList.add("no-cursor");
 
-    const onMove = (e: MouseEvent) => {
-      mouse.current = { x: e.clientX, y: e.clientY };
-    };
-    const onEnter = () => setHover(true);
-    const onLeave = () => setHover(false);
+    const dot = dotRef.current;
+    const ring = ringRef.current;
+    if (!dot || !ring) return;
 
-    window.addEventListener("mousemove", onMove);
-    const targets = document.querySelectorAll("a, button, input, textarea, select");
-    targets.forEach((el) => {
-      el.addEventListener("mouseenter", onEnter);
-      el.addEventListener("mouseleave", onLeave);
-    });
+    const mouse = { x: -100, y: -100 };
+    const dotPos = { x: -100, y: -100 };
+    const ringPos = { x: -100, y: -100 };
+    let hovering = false;
 
     const lerp = (start: number, end: number, factor: number) =>
       start + (end - start) * factor;
 
+    const onMove = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+    const onEnter = () => {
+      hovering = true;
+    };
+    const onLeave = () => {
+      hovering = false;
+    };
+
+    const targets = document.querySelectorAll("a, button, input, textarea, select");
+
     let raf = 0;
     const animate = () => {
-      dot.current.x = lerp(dot.current.x, mouse.current.x, DOT_SMOOTHNESS);
-      dot.current.y = lerp(dot.current.y, mouse.current.y, DOT_SMOOTHNESS);
-      ring.current.x = lerp(ring.current.x, mouse.current.x, RING_SMOOTHNESS);
-      ring.current.y = lerp(ring.current.y, mouse.current.y, RING_SMOOTHNESS);
-      setPos({
-        dot: { x: dot.current.x, y: dot.current.y },
-        ring: { x: ring.current.x, y: ring.current.y },
-      });
+      dotPos.x = lerp(dotPos.x, mouse.x, DOT_SMOOTHNESS);
+      dotPos.y = lerp(dotPos.y, mouse.y, DOT_SMOOTHNESS);
+      ringPos.x = lerp(ringPos.x, mouse.x, RING_SMOOTHNESS);
+      ringPos.y = lerp(ringPos.y, mouse.y, RING_SMOOTHNESS);
+      dot.style.transform = `translate(${dotPos.x}px, ${dotPos.y}px) translate(-50%, -50%)`;
+      ring.style.transform = `translate(${ringPos.x}px, ${ringPos.y}px) translate(-50%, -50%)`;
+      if (hovering && ring.style.width !== "44px") {
+        ring.style.width = "44px";
+        ring.style.height = "44px";
+      } else if (!hovering && ring.style.width !== "28px") {
+        ring.style.width = "28px";
+        ring.style.height = "28px";
+      }
       raf = requestAnimationFrame(animate);
     };
+
+    window.addEventListener("mousemove", onMove);
+    targets.forEach((el) => {
+      el.addEventListener("mouseenter", onEnter);
+      el.addEventListener("mouseleave", onLeave);
+    });
     raf = requestAnimationFrame(animate);
 
     return () => {
@@ -62,23 +79,16 @@ export function SmoothCursor() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-[100]">
       <div
+        ref={dotRef}
         className="absolute rounded-full bg-terminal-signal"
-        style={{
-          width: 8,
-          height: 8,
-          transform: "translate(-50%, -50%)",
-          left: pos.dot.x,
-          top: pos.dot.y,
-        }}
+        style={{ width: 8, height: 8 }}
       />
       <div
+        ref={ringRef}
         className="absolute rounded-full border border-terminal-text"
         style={{
-          width: hover ? 44 : 28,
-          height: hover ? 44 : 28,
-          transform: "translate(-50%, -50%)",
-          left: pos.ring.x,
-          top: pos.ring.y,
+          width: 28,
+          height: 28,
           transition: "width 0.3s, height 0.3s",
         }}
       />
