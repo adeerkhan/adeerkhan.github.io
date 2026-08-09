@@ -22,7 +22,6 @@ export function GridSwizzle() {
     let width = 0;
     let height = 0;
     let faint = "rgba(255,255,255,0.025)";
-    let bright = "#2A2A2A";
 
     const readColor = (name: string, fallback: string) =>
       getComputedStyle(document.documentElement)
@@ -76,12 +75,6 @@ export function GridSwizzle() {
       return { x: x + Math.cos(a) * amount, y: y + Math.sin(a) * amount };
     };
 
-    const nearCursor = (x: number, y: number) => {
-      const dx = x - pos.x;
-      const dy = y - pos.y;
-      return dx * dx + dy * dy <= RADIUS * RADIUS;
-    };
-
     const draw = (phase: number) => {
       ctx.clearRect(0, 0, width, height);
 
@@ -102,32 +95,6 @@ export function GridSwizzle() {
           const p = warp(gx, gy, phase);
           if (gx === 0) ctx.moveTo(p.x, p.y);
           else ctx.lineTo(p.x, p.y);
-        }
-        ctx.stroke();
-      }
-
-      ctx.strokeStyle = bright;
-      for (let gx = 0; gx <= width; gx += CELL) {
-        ctx.beginPath();
-        for (let gy = 0; gy < height; gy += CELL) {
-          const p1 = warp(gx, gy, phase);
-          const p2 = warp(gx, gy + CELL, phase);
-          if (nearCursor(gx, gy) || nearCursor(gx, gy + CELL)) {
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-          }
-        }
-        ctx.stroke();
-      }
-      for (let gy = 0; gy <= height; gy += CELL) {
-        ctx.beginPath();
-        for (let gx = 0; gx < width; gx += CELL) {
-          const p1 = warp(gx, gy, phase);
-          const p2 = warp(gx + CELL, gy, phase);
-          if (nearCursor(gx, gy) || nearCursor(gx + CELL, gy)) {
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-          }
         }
         ctx.stroke();
       }
@@ -152,10 +119,8 @@ export function GridSwizzle() {
 
     resize();
     faint = readColor("--terminal-grid", faint);
-    bright = readColor("--terminal-border", bright);
     const observer = new MutationObserver(() => {
       faint = readColor("--terminal-grid", faint);
-      bright = readColor("--terminal-border", bright);
     });
     observer.observe(document.documentElement, { attributes: true });
 
