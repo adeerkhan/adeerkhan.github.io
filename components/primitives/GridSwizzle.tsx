@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 
 const CELL = 40;
-const RADIUS = 140;
-const AMPLITUDE = 28;
-const LERP = 0.3;
+const RADIUS = 60;
+const AMPLITUDE = 18;
+const LERP = 0.35;
 
 export function GridSwizzle() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -22,6 +22,8 @@ export function GridSwizzle() {
     let width = 0;
     let height = 0;
     let color = "#2A2A2A";
+    let offX = 0;
+    let offY = 0;
 
     const readColor = () =>
       getComputedStyle(document.documentElement)
@@ -34,15 +36,20 @@ export function GridSwizzle() {
       height = window.innerHeight;
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const rect = canvas.getBoundingClientRect();
+      offX = rect.left;
+      offY = rect.top;
     };
 
     const mouse = { x: -9999, y: -9999 };
     const pos = { x: -9999, y: -9999 };
 
     const onMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      mouse.x = e.clientX - offX;
+      mouse.y = e.clientY - offY;
     };
 
     const warp = (x: number, y: number, phase: number) => {
