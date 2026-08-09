@@ -1,0 +1,45 @@
+export const experience = [
+	{
+		company: "Craft AEC GmbH",
+		role: "AI Research Engineer",
+		date: "Oct 2023 - Present",
+		companyLogo: "",
+		desc: "Lead AI research and development for a BIM startup in Germany.",
+		descBullets: [
+			"Designing LLM-integrated digital twin systems and automated design workflows.",
+			"Applying generative AI to architecture, engineering, and construction.",
+		],
+	},
+	{
+		company: "KAIST (SSEL Lab)",
+		role: "Graduate Researcher",
+		date: "Feb 2024 - Aug 2025",
+		companyLogo: "",
+		desc: "Researched generative AI for automated building design and LLM-integrated digital twins at the Smart and Sustainable Environment Design Laboratory.",
+		descBullets: [
+			"Led a systematic review of generative models for architectural design automation, published in Automation in Construction (Q1).",
+			"Developed digital twin frameworks with LLM integration for adaptive building control.",
+		],
+	},
+	{
+		company: "Joyn Group Pvt. Ltd.",
+		role: "Data Scientist",
+		date: "Aug 2023 - Oct 2023",
+		companyLogo: "",
+		desc: "Applied machine learning to business data and product workflows.",
+		descBullets: [
+			"Built data pipelines and ML models for business decision support.",
+		],
+	},
+	{
+		company: "Capital University of Science and Technology",
+		role: "Undergraduate Researcher (FYP)",
+		date: "2021 - 2022",
+		companyLogo: "",
+		desc: "Final-year project on a simple, sustainable approach for structural health monitoring of structures.",
+		descBullets: [
+			"Experimental and numerical validation of damage detection using snapback and harmonic tests.",
+			"Published in the Capital University of Science and Technology journal.",
+		],
+	},
+];

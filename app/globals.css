@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terminal-bg: var(--terminal-bg);
+  --color-terminal-surface: var(--terminal-surface);
+  --color-terminal-elevated: var(--terminal-elevated);
+  --color-terminal-border: var(--terminal-border);
+  --color-terminal-muted: var(--terminal-muted);
+  --color-terminal-dim: var(--terminal-dim);
+  --color-terminal-text: var(--terminal-text);
+  --color-terminal-soft: var(--terminal-soft);
+  --color-terminal-signal: var(--terminal-signal);
+  --color-terminal-signal-dim: var(--terminal-signal-dim);
+  --color-terminal-green: var(--terminal-green);
+  --color-terminal-amber: var(--terminal-amber);
+  --color-terminal-white: var(--terminal-white);
+  --font-mono: var(--font-space-mono), "Space Mono", monospace;
+  --font-display: var(--font-space-mono), "Space Mono", monospace;
+  --font-body: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  --spacing-section: 6rem;
+  --spacing-section-sm: 3rem;
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --animate-blink: blink 1s step-start infinite;
+  --animate-scanline: scanline 8s linear infinite;
+  --animate-glitch: glitch 0.4s steps(1) infinite;
+  --animate-marquee: marquee 20s linear infinite;
+}
+
+:root {
+  --terminal-bg: #0A0A0A;
+  --terminal-surface: #111111;
+  --terminal-elevated: #1A1A1A;
+  --terminal-border: #2A2A2A;
+  --terminal-muted: #444444;
+  --terminal-dim: #666666;
+  --terminal-text: #F0F0F0;
+  --terminal-soft: #BBBBBB;
+  --terminal-signal: #FF3D00;
+  --terminal-signal-dim: #991F00;
+  --terminal-green: #00FF41;
+  --terminal-amber: #FFB800;
+  --terminal-white: #FFFFFF;
+  --terminal-grid: rgba(255, 255, 255, 0.025);
+}
+
+.light {
+  --terminal-bg: #F5F1E8;
+  --terminal-surface: #EDE9DF;
+  --terminal-elevated: #E2DED4;
+  --terminal-border: #C9C4B8;
+  --terminal-muted: #9A958A;
+  --terminal-dim: #6E695F;
+  --terminal-text: #131313;
+  --terminal-soft: #3A3A38;
+  --terminal-signal: #D63D00;
+  --terminal-signal-dim: #A52A00;
+  --terminal-green: #007A2A;
+  --terminal-amber: #A86900;
+  --terminal-white: #FFFFFF;
+  --terminal-grid: rgba(0, 0, 0, 0.05);
+}
+
+:root {
+  --background: 10 10 10;
+  --foreground: 240 240 240;
+  --card: 17 17 17;
+  --card-foreground: 240 240 240;
+  --border: 42 42 42;
+  --input: 26 26 26;
+  --ring: 255 61 0;
+  --primary: 255 61 0;
+  --primary-foreground: 10 10 10;
+  --muted: 26 26 26;
+  --muted-foreground: 102 102 102;
+  --accent: 255 61 0;
+  --accent-foreground: 10 10 10;
+  --font-space-mono: "Space Mono", monospace;
+  --font-ibm-plex-mono: "IBM Plex Mono", monospace;
+  --radius: 0px;
+  --terminal-signal: #FF3D00;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glitch {
+  0% { clip-path: inset(40% 0 61% 0); transform: translate(-4px, 0); }
+  20% { clip-path: inset(92% 0 1% 0); transform: translate(4px, 0); }
+  40% { clip-path: inset(43% 0 1% 0); transform: translate(-2px, 0); }
+  60% { clip-path: inset(25% 0 58% 0); transform: translate(2px, 0); }
+  80% { clip-path: inset(54% 0 7% 0); transform: translate(-4px, 0); }
+  100% { clip-path: inset(58% 0 43% 0); transform: translate(0, 0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes particle-drift {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  20% { opacity: 0.3; }
+  100% { transform: translate3d(32px, -72px, 0); opacity: 0; }
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--terminal-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--terminal-bg);
+}
+
+body {
+  margin: 0;
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: var(--font-ibm-plex-mono);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--terminal-signal);
+  color: var(--terminal-bg);
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--terminal-surface); }
+::-webkit-scrollbar-thumb { background: var(--terminal-signal); }
+
+.grid-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, var(--terminal-grid) 39px, var(--terminal-grid) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, var(--terminal-grid) 39px, var(--terminal-grid) 40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cursor::after {
+  content: "_";
+  animation: blink 1s step-start infinite;
+  color: var(--terminal-signal);
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glitch:hover::before {
+  opacity: 0.8;
+  color: var(--terminal-signal);
+  animation: glitch 0.4s steps(1) infinite;
+}
+
+.glitch:hover::after {
+  opacity: 0.8;
+  color: var(--terminal-green);
+  animation: glitch 0.4s steps(1) 0.1s infinite;
+}
+
+.progress-brutalist {
+  height: 4px;
+  background: var(--terminal-elevated);
+  border: 1px solid var(--terminal-border);
+  overflow: hidden;
+}
+
+.progress-brutalist > div {
+  height: 100%;
+  background: var(--terminal-signal);
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
