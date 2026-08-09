@@ -158,29 +158,6 @@ a {
   z-index: 0;
 }
 
-.grid-swizzle {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  transform: translate(-50%, -50%);
-  clip-path: circle(50%);
-  pointer-events: none;
-  z-index: 2;
-  background-image:
-    repeating-linear-gradient(0deg, transparent 0 1px, var(--terminal-signal) 1px 2px),
-    repeating-linear-gradient(90deg, transparent 0 1px, var(--terminal-signal) 1px 2px);
-  background-size: 2px 2px;
-  animation: grid-swizzle 1.2s ease-in-out infinite;
-  opacity: 0.55;
-}
-
-@keyframes grid-swizzle {
-  0%   { background-position: 0 0; }
-  33%  { background-position: 2px 0; }
-  66%  { background-position: 2px 2px; }
-  100% { background-position: 0 2px; }
-}
-
 .typewriter-cursor {
   display: inline-block;
   margin-left: 2px;

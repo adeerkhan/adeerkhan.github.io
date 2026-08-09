@@ -46,11 +46,11 @@ export function HeroSection() {
       <ParticlesBackground />
       <div className="relative z-10 my-auto max-w-5xl pb-12 md:my-0 md:pb-16">
         <SectionLabel num="01" />
-        <h1 className="font-mono text-[clamp(64px,12vw,160px)] font-bold leading-none text-terminal-text">
-          <span className="block">
+        <h1 className="font-mono text-[clamp(40px,9vw,140px)] font-bold leading-none text-terminal-text">
+          <span className="block whitespace-nowrap">
             {hero.greeting} {"I'M"}
           </span>
-          <span className="block">
+          <span className="block whitespace-nowrap">
             <TerminalLine text={hero.name} cursor />
           </span>
         </h1>
