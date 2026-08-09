@@ -146,6 +146,9 @@ a {
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--terminal-surface); }
 ::-webkit-scrollbar-thumb { background: var(--terminal-signal); }
+::-webkit-scrollbar-thumb:hover { background: var(--terminal-white); }
+::-webkit-scrollbar-thumb:active { background: var(--terminal-white); }
+::-webkit-scrollbar:hover { width: 10px; }
 
 .grid-overlay::before {
   content: "";

@@ -128,7 +128,7 @@ describe("Plan.md portfolio requirements", () => {
       ),
     );
 
-    expect(source).toContain("md:items-center");
+    expect(source).toContain("md:items-start");
     expect(source).toContain("mx-auto");
     expect(source).toContain("md:ml-auto");
     expect(source).toContain("aspect-square");

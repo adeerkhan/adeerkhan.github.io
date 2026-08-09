@@ -11,11 +11,11 @@ export const experience = [
 		],
 	},
 	{
-		company: "KAIST (SSEL Lab)",
+		company: "Korea Advanced Institute of Science & Technology (KAIST)",
 		role: "Graduate Researcher",
 		date: "Feb 2024 - Aug 2025",
 		companyLogo: "/img/kaist.png",
-		desc: "Researched generative AI for automated building design and LLM-integrated digital twins at the Smart and Sustainable Environment Design Laboratory.",
+		desc: "Researched generative AI for automated building design and LLM-integrated digital twins.",
 		descBullets: [
 			"Led a systematic review of generative models for architectural design automation, published in Automation in Construction (Q1).",
 			"Developed digital twin frameworks with LLM integration for adaptive building control.",

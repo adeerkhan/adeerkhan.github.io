@@ -20,7 +20,7 @@ export function ContactSection({ github }: ContactSectionProps) {
 	return (
 		<div>
 			<SectionLabel num="08" />
-			<div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(180px,0.45fr)] md:items-center md:gap-12">
+			<div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(180px,0.45fr)] md:items-start md:gap-12">
 				<div>
 					<h2 className="font-mono text-[clamp(40px,7vw,96px)] font-bold leading-[0.9] text-terminal-text">
 						REACH OUT TO ME!
