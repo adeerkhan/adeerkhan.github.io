@@ -71,7 +71,7 @@ describe("Plan.md portfolio requirements", () => {
 
     expect(css).toContain("--terminal-signal: #FF3D00");
     expect(css).toContain("--radius: 0px");
-    expect(css).toContain(".grid-overlay::before");
+    expect(css).toContain("--terminal-grid");
     expect(css).toContain(".glitch:hover::before");
     expect(css).toContain(".progress-brutalist");
   });

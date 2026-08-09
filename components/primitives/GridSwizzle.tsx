@@ -21,35 +21,47 @@ export function GridSwizzle() {
 
     let width = 0;
     let height = 0;
-    let color = "#2A2A2A";
-    let offX = 0;
-    let offY = 0;
+    let faint = "rgba(255,255,255,0.025)";
+    let bright = "#2A2A2A";
 
-    const readColor = () =>
+    const readColor = (name: string, fallback: string) =>
       getComputedStyle(document.documentElement)
-        .getPropertyValue("--terminal-border")
-        .trim() || color;
+        .getPropertyValue(name)
+        .trim() || fallback;
+
+    const pageHeight = () =>
+      Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight,
+        window.innerHeight,
+      );
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
       width = window.innerWidth;
-      height = window.innerHeight;
+      height = pageHeight();
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const rect = canvas.getBoundingClientRect();
-      offX = rect.left;
-      offY = rect.top;
     };
 
+    let lastClientX = 0;
+    let lastClientY = 0;
     const mouse = { x: -9999, y: -9999 };
     const pos = { x: -9999, y: -9999 };
 
     const onMove = (e: MouseEvent) => {
-      mouse.x = e.clientX - offX;
-      mouse.y = e.clientY - offY;
+      lastClientX = e.clientX;
+      lastClientY = e.clientY;
+      mouse.x = e.clientX + window.scrollX;
+      mouse.y = e.clientY + window.scrollY;
+    };
+
+    const syncScroll = () => {
+      mouse.x = lastClientX + window.scrollX;
+      mouse.y = lastClientY + window.scrollY;
     };
 
     const warp = (x: number, y: number, phase: number) => {
@@ -64,11 +76,17 @@ export function GridSwizzle() {
       return { x: x + Math.cos(a) * amount, y: y + Math.sin(a) * amount };
     };
 
+    const nearCursor = (x: number, y: number) => {
+      const dx = x - pos.x;
+      const dy = y - pos.y;
+      return dx * dx + dy * dy <= RADIUS * RADIUS;
+    };
+
     const draw = (phase: number) => {
       ctx.clearRect(0, 0, width, height);
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 1;
 
+      ctx.strokeStyle = faint;
+      ctx.lineWidth = 1;
       for (let gx = 0; gx <= width; gx += CELL) {
         ctx.beginPath();
         for (let gy = 0; gy <= height; gy += CELL) {
@@ -87,6 +105,32 @@ export function GridSwizzle() {
         }
         ctx.stroke();
       }
+
+      ctx.strokeStyle = bright;
+      for (let gx = 0; gx <= width; gx += CELL) {
+        ctx.beginPath();
+        for (let gy = 0; gy < height; gy += CELL) {
+          const p1 = warp(gx, gy, phase);
+          const p2 = warp(gx, gy + CELL, phase);
+          if (nearCursor(gx, gy) || nearCursor(gx, gy + CELL)) {
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+          }
+        }
+        ctx.stroke();
+      }
+      for (let gy = 0; gy <= height; gy += CELL) {
+        ctx.beginPath();
+        for (let gx = 0; gx < width; gx += CELL) {
+          const p1 = warp(gx, gy, phase);
+          const p2 = warp(gx + CELL, gy, phase);
+          if (nearCursor(gx, gy) || nearCursor(gx + CELL, gy)) {
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+          }
+        }
+        ctx.stroke();
+      }
     };
 
     let raf = 0;
@@ -97,21 +141,36 @@ export function GridSwizzle() {
       raf = requestAnimationFrame(animate);
     };
 
+    let lastHeight = pageHeight();
+    const maybeResize = () => {
+      const ph = pageHeight();
+      if (ph !== lastHeight || width !== window.innerWidth) {
+        lastHeight = ph;
+        resize();
+      }
+    };
+
     resize();
-    color = readColor();
+    faint = readColor("--terminal-grid", faint);
+    bright = readColor("--terminal-border", bright);
     const observer = new MutationObserver(() => {
-      color = readColor();
+      faint = readColor("--terminal-grid", faint);
+      bright = readColor("--terminal-border", bright);
     });
     observer.observe(document.documentElement, { attributes: true });
 
     window.addEventListener("mousemove", onMove);
-    window.addEventListener("resize", resize);
+    window.addEventListener("scroll", syncScroll);
+    window.addEventListener("resize", maybeResize);
+    const timer = window.setInterval(maybeResize, 700);
     raf = requestAnimationFrame(animate);
 
     return () => {
       observer.disconnect();
       window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("scroll", syncScroll);
+      window.removeEventListener("resize", maybeResize);
+      window.clearInterval(timer);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -120,7 +179,7 @@ export function GridSwizzle() {
     <canvas
       ref={canvasRef}
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-[2]"
+      className="pointer-events-none absolute left-0 top-0 z-0"
     />
   );
 }

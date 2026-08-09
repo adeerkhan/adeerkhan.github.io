@@ -6,7 +6,7 @@ interface PageShellProps {
 
 export function PageShell({ children }: PageShellProps) {
   return (
-    <div className="grid-overlay relative min-h-screen bg-terminal-bg">
+    <div className="relative min-h-screen bg-terminal-bg">
       <GridSwizzle />
       <div
         aria-hidden
