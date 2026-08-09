@@ -18,7 +18,7 @@ describe("Plan.md portfolio requirements", () => {
   });
 
   it("centralizes all portfolio content in data files", () => {
-    expect(hero.name).toBe("ADEER");
+    expect(hero.name).toBe("ADEER KHAN");
     expect(hero.stats).toEqual([
       { value: 4, suffix: "+", label: "Publications" },
       { value: 8, suffix: "+", label: "Projects" },

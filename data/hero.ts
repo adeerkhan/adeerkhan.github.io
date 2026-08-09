@@ -1,8 +1,8 @@
 export const hero = {
   greeting: "HELLO,",
-  name: "ADEER",
+  name: "ADEER KHAN",
   description:
-    "I research generative AI for automated building design and LLM-integrated digital twins.",
+    "AI researcher passionate about developing smart solutions for the built world — applying software engineering, machine learning, and AI to create innovative solutions.",
   resumeLink: "/CV-Adeer-Khan.pdf",
   stats: [
     { value: 4, suffix: "+", label: "Publications" },
