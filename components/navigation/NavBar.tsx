@@ -54,7 +54,7 @@ export function NavBar() {
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="flex h-9 w-9 items-center justify-center border border-terminal-border text-terminal-dim transition-colors duration-200 hover:border-terminal-signal hover:text-terminal-signal"
+              className="flex h-9 w-9 items-center justify-center border border-terminal-border text-terminal-dim transition-colors duration-200 hover:border-terminal-signal hover:bg-terminal-signal hover:text-terminal-bg"
             >
               <Icon icon={icon} width={18} height={18} aria-hidden />
             </a>
@@ -89,7 +89,7 @@ export function NavBar() {
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "noreferrer"}
-                className="flex items-center justify-between border-b border-terminal-border px-6 py-4 font-mono text-xs text-terminal-dim"
+                className="flex items-center justify-between border-b border-terminal-border px-6 py-4 font-mono text-xs text-terminal-dim transition-colors duration-200 hover:bg-terminal-signal hover:text-terminal-bg"
                 onClick={() => setOpen(false)}
               >
                 <span>{label}</span>
