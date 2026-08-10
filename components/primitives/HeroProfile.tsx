@@ -9,7 +9,7 @@ export function HeroProfile() {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="profile-glitch shrink-0">
+    <div className="profile-glitch shrink-0 translate-x-[10%]">
       <Image
         src={IMAGES[index]}
         alt="Adeer Khan"

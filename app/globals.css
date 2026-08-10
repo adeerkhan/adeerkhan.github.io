@@ -170,7 +170,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px solid var(--terminal-signal);
+  border: 4px solid var(--terminal-signal);
   opacity: 0;
   pointer-events: none;
 }
