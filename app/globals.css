@@ -25,9 +25,7 @@
   --radius-lg: 0px;
   --radius-xl: 0px;
   --animate-blink: blink 1s step-start infinite;
-  --animate-scanline: scanline 8s linear infinite;
   --animate-glitch: glitch 0.4s steps(1) infinite;
-  --animate-marquee: marquee 20s linear infinite;
 }
 
 :root {
@@ -64,34 +62,9 @@
   --terminal-grid: rgba(0, 0, 0, 0.05);
 }
 
-:root {
-  --background: 10 10 10;
-  --foreground: 240 240 240;
-  --card: 17 17 17;
-  --card-foreground: 240 240 240;
-  --border: 42 42 42;
-  --input: 26 26 26;
-  --ring: 255 61 0;
-  --primary: 255 61 0;
-  --primary-foreground: 10 10 10;
-  --muted: 26 26 26;
-  --muted-foreground: 102 102 102;
-  --accent: 255 61 0;
-  --accent-foreground: 10 10 10;
-  --font-space-mono: "Space Mono", monospace;
-  --font-ibm-plex-mono: "IBM Plex Mono", monospace;
-  --radius: 0px;
-  --terminal-signal: #FF3D00;
-}
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-}
-
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
 }
 
 @keyframes glitch {
@@ -100,12 +73,7 @@
   40% { clip-path: inset(43% 0 1% 0); transform: translate(-2px, 0); }
   60% { clip-path: inset(25% 0 58% 0); transform: translate(2px, 0); }
   80% { clip-path: inset(54% 0 7% 0); transform: translate(-4px, 0); }
-  100% { clip-path: inset(58% 0 43% 0); transform: translate(0, 0); }
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+   100% { clip-path: inset(58% 0 43% 0); transform: translate(0, 0); }
 }
 
 * {
@@ -190,17 +158,4 @@ a {
   opacity: 0.8;
   color: var(--terminal-green);
   animation: glitch 0.4s steps(1) 0.1s infinite;
-}
-
-.progress-brutalist {
-  height: 4px;
-  background: var(--terminal-elevated);
-  border: 1px solid var(--terminal-border);
-  overflow: hidden;
-}
-
-.progress-brutalist > div {
-  height: 100%;
-  background: var(--terminal-signal);
-  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }

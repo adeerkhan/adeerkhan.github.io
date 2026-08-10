@@ -12,10 +12,7 @@
   },
   "dependencies": {
     "@iconify/react": "latest",
-    "@radix-ui/react-progress": "latest",
     "@radix-ui/react-slot": "latest",
-    "@radix-ui/react-tooltip": "latest",
-    "class-variance-authority": "latest",
     "clsx": "latest",
     "framer-motion": "latest",
     "lucide-react": "latest",

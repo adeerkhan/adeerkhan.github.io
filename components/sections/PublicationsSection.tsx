@@ -9,7 +9,7 @@ import { publications } from "@/data/publications";
 export function PublicationsSection() {
   return (
     <div>
-      <SectionLabel num="07" />
+      <SectionLabel num="06" />
       <SectionTitle>PUBLICATIONS.</SectionTitle>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {publications.map((pub) => {

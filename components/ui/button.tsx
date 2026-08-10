@@ -1,41 +1,22 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap border font-mono text-xs uppercase tracking-widest transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-terminal-signal disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        outline:
-          "border-terminal-signal text-terminal-signal hover:bg-terminal-signal hover:text-terminal-bg",
-      },
-      size: {
-        default: "h-10 px-5 py-2",
-        icon: "h-9 w-9",
-      },
-    },
-    defaultVariants: {
-      variant: "outline",
-      size: "default",
-    },
-  },
-);
-
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(
+          "inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap border border-terminal-signal px-5 py-2 font-mono text-xs uppercase tracking-widest text-terminal-signal transition-colors duration-200 hover:bg-terminal-signal hover:text-terminal-bg focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-terminal-signal disabled:pointer-events-none disabled:opacity-50",
+          className,
+        )}
         ref={ref}
         {...props}
       />
@@ -44,4 +25,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+export { Button };

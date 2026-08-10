@@ -6,7 +6,7 @@ import { education } from "@/data/education";
 export function EducationSection() {
   return (
     <div>
-      <SectionLabel num="04" />
+      <SectionLabel num="03" />
       <SectionTitle>EDUCATION.</SectionTitle>
       <div className="grid gap-4">
         {education.map((item) => (

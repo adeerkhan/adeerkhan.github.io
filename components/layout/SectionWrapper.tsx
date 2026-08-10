@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import { useInViewOnce } from "@/hooks/use-in-view-once";
 
 interface SectionWrapperProps {
   id: string;
@@ -18,8 +18,7 @@ export function SectionWrapper({
   children,
   className = "",
 }: SectionWrapperProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const { ref, isInView } = useInViewOnce<HTMLElement>("-60px");
 
   return (
     <section

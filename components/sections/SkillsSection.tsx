@@ -1,17 +1,15 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SectionTitle } from "@/components/primitives/SectionTitle";
 import { SkillBadge } from "@/components/primitives/SkillBadge";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { useInViewOnce } from "@/hooks/use-in-view-once";
 import { skillGroups } from "@/data/skills";
 
 export function SkillsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { ref, isInView } = useInViewOnce();
 
   return (
     <div ref={ref}>
@@ -23,30 +21,29 @@ export function SkillsSection() {
         environment
       </p>
       <div className="my-12 border-t border-terminal-border" />
-      <TooltipProvider>
-        <div className="space-y-12 md:space-y-16">
-          {skillGroups.map((group) => (
-            <div
-              key={group.title}
-              className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
-            >
-              <div>
-                <h3 className="mb-6 font-mono text-2xl font-bold uppercase text-terminal-text">
-                  <span className="text-terminal-signal">&gt; </span>
-                  {group.title}
-                </h3>
-                <ul className="space-y-3">
-                  {group.capabilities.map((capability) => (
-                    <li
-                      key={capability}
-                      className="flex gap-3 text-sm text-terminal-soft"
-                    >
-                      <span className="text-terminal-signal">-</span>
-                      <span>{capability}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      <div className="space-y-12 md:space-y-16">
+        {skillGroups.map((group) => (
+          <div
+            key={group.title}
+            className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
+          >
+            <div>
+              <h3 className="mb-6 font-mono text-2xl font-bold uppercase text-terminal-text">
+                <span className="text-terminal-signal">&gt; </span>
+                {group.title}
+              </h3>
+              <ul className="space-y-3">
+                {group.capabilities.map((capability) => (
+                  <li
+                    key={capability}
+                    className="flex gap-3 text-sm font-medium text-terminal-soft"
+                  >
+                    <span className="text-terminal-signal">-</span>
+                    <span>{capability}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
               <motion.div
                 className="flex flex-wrap content-start gap-2"
                 variants={{
@@ -63,7 +60,6 @@ export function SkillsSection() {
             </div>
           ))}
         </div>
-      </TooltipProvider>
     </div>
   );
 }

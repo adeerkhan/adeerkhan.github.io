@@ -57,7 +57,7 @@ export function NavBar() {
               <Icon icon={icon} width={18} height={18} aria-hidden />
             </a>
           ))}
-          <Button asChild variant="outline">
+          <Button asChild>
             <a href={socialLinks.email}>[ CONTACT ]</a>
           </Button>
           <ThemeToggle />

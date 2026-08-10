@@ -1,13 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SocialLink } from "@/components/primitives/SocialLink";
 import { TerminalLine } from "@/components/primitives/TerminalLine";
 import { TypewriterText } from "@/components/primitives/TypewriterText";
 import { hero } from "@/data/hero";
 import { socialLinks } from "@/data/social";
 import { useCountUp } from "@/hooks/use-count-up";
-import { SectionLabel } from "../primitives/SectionLabel";
 
 function StatItem({
   value,

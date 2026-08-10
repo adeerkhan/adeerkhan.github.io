@@ -5,7 +5,6 @@ import { ContactSection, type GithubProfile } from "@/components/sections/Contac
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ProficiencySection } from "@/components/sections/ProficiencySection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { PublicationsSection } from "@/components/sections/PublicationsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
@@ -50,22 +49,19 @@ export default async function Home() {
       <SectionWrapper id="skills" num="02">
         <SkillsSection />
       </SectionWrapper>
-      <SectionWrapper id="proficiency" num="03">
-        <ProficiencySection />
-      </SectionWrapper>
-      <SectionWrapper id="education" num="04">
+      <SectionWrapper id="education" num="03">
         <EducationSection />
       </SectionWrapper>
-      <SectionWrapper id="experience" num="05">
+      <SectionWrapper id="experience" num="04">
         <ExperienceSection />
       </SectionWrapper>
-      <SectionWrapper id="projects" num="06">
+      <SectionWrapper id="projects" num="05">
         <ProjectsSection />
       </SectionWrapper>
-      <SectionWrapper id="publications" num="07">
+      <SectionWrapper id="publications" num="06">
         <PublicationsSection />
       </SectionWrapper>
-      <SectionWrapper id="contact" num="08">
+      <SectionWrapper id="contact" num="07">
         <ContactSection github={github} />
       </SectionWrapper>
     </PageShell>

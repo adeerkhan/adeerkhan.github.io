@@ -5,7 +5,6 @@ import nextConfig from "../next.config";
 import { education } from "../data/education";
 import { experience } from "../data/experience";
 import { hero } from "../data/hero";
-import { proficiency } from "../data/proficiency";
 import { projects } from "../data/projects";
 import { skillGroups } from "../data/skills";
 import { socialLinks } from "../data/social";
@@ -48,13 +47,6 @@ describe("Plan.md portfolio requirements", () => {
         "LaTeX",
       ]),
     );
-    expect(proficiency).toEqual([
-      { label: "Machine Learning & Deep Learning", percentage: 90 },
-      { label: "Generative AI & LLMs", percentage: 85 },
-      { label: "Computer Vision & 3D", percentage: 80 },
-      { label: "Geospatial & Spatial Data Science", percentage: 85 },
-      { label: "Research & Engineering", percentage: 90 },
-    ]);
     expect(education[0]).toMatchObject({
       schoolName: expect.any(String),
       subHeader: expect.any(String),
@@ -70,10 +62,8 @@ describe("Plan.md portfolio requirements", () => {
     );
 
     expect(css).toContain("--terminal-signal: #FF3D00");
-    expect(css).toContain("--radius: 0px");
     expect(css).toContain("--terminal-grid");
     expect(css).toContain(".glitch:hover::before");
-    expect(css).toContain(".progress-brutalist");
   });
 
   it("uses consistent vertical rhythm between skill groups", async () => {
@@ -85,19 +75,6 @@ describe("Plan.md portfolio requirements", () => {
     );
 
     expect(source).toContain("space-y-12 md:space-y-16");
-  });
-
-  it("stacks proficiency bars below the section heading in two columns", async () => {
-    const source = await import("node:fs/promises").then((fs) =>
-      fs.readFile(
-        new URL("../components/sections/ProficiencySection.tsx", import.meta.url),
-        "utf8",
-      ),
-    );
-
-    expect(source).toContain('className="space-y-12"');
-    expect(source).toContain('className="grid gap-8 md:grid-cols-2"');
-    expect(source).not.toContain("md:grid-cols-[0.8fr_1.2fr]");
   });
 
   it("stretches project cards to consistent row heights", async () => {

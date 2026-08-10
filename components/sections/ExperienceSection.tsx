@@ -6,7 +6,7 @@ import { experience } from "@/data/experience";
 export function ExperienceSection() {
   return (
     <div>
-      <SectionLabel num="05" />
+      <SectionLabel num="04" />
       <SectionTitle>EXPERIENCE.</SectionTitle>
       <div className="grid gap-4 md:grid-cols-2">
         {experience.map((item) => (
