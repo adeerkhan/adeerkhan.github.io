@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { GlitchText } from "@/components/primitives/GlitchText";
 import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SocialLink } from "@/components/primitives/SocialLink";
 import { socialLinks } from "@/data/social";
@@ -23,7 +24,7 @@ export function ContactSection({ github }: ContactSectionProps) {
 			<div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(180px,0.45fr)] md:items-start md:gap-12">
 				<div>
 					<h2 className="font-mono text-[clamp(40px,7vw,96px)] font-bold leading-[0.9] text-terminal-text">
-						REACH OUT TO ME!
+						<GlitchText>REACH OUT TO ME!</GlitchText>
 					</h2>
 					<p className="mt-8 max-w-xl font-mono text-sm uppercase leading-relaxed tracking-widest text-terminal-soft">
 						Discuss a project or just want to say hi? My inbox is
