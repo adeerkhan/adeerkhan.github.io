@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { GlitchText } from "@/components/primitives/GlitchText";
 import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SocialLink } from "@/components/primitives/SocialLink";
 import { TerminalLine } from "@/components/primitives/TerminalLine";
@@ -46,10 +47,12 @@ export function HeroSection() {
         <SectionLabel num="01" />
         <h1 className="font-mono text-[clamp(40px,9vw,140px)] font-bold leading-none text-terminal-text">
           <span className="block whitespace-nowrap">
-            {hero.greeting} {"I'M"}
+            <GlitchText>{`${hero.greeting} I'M`}</GlitchText>
           </span>
           <span className="block whitespace-nowrap">
-            <TerminalLine text={hero.name} cursor />
+            <span className="glitch" data-text={hero.name}>
+              <TerminalLine text={hero.name} cursor />
+            </span>
           </span>
         </h1>
         <p className="mt-8 max-w-xl whitespace-pre-line border-l-2 border-terminal-signal pl-4 text-sm leading-relaxed text-terminal-soft">

@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { GlitchText } from "@/components/primitives/GlitchText";
 import { ThemeToggle } from "@/components/primitives/ThemeToggle";
 import { socialLinks } from "@/data/social";
 
@@ -42,7 +43,8 @@ export function NavBar() {
           href="#hero"
           className="font-mono text-lg font-bold tracking-wider text-terminal-text"
         >
-          <span className="text-terminal-signal">&gt;</span> ADEER_KHAN
+          <span className="text-terminal-signal">&gt;</span>{" "}
+          <GlitchText>ADEER_KHAN</GlitchText>
         </a>
         <div className="hidden items-center gap-3 md:flex">
           {navLinks.map(({ href, label, icon }) => (

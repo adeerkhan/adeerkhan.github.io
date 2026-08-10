@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SectionTitle } from "@/components/primitives/SectionTitle";
 import { SkillBadge } from "@/components/primitives/SkillBadge";
+import { GlitchText } from "@/components/primitives/GlitchText";
 import { useInViewOnce } from "@/hooks/use-in-view-once";
 import { skillGroups } from "@/data/skills";
 
@@ -30,7 +31,7 @@ export function SkillsSection() {
             <div>
               <h3 className="mb-6 font-mono text-2xl font-bold uppercase text-terminal-text">
                 <span className="text-terminal-signal">&gt; </span>
-                {group.title}
+                <GlitchText>{group.title}</GlitchText>
               </h3>
               <ul className="space-y-3">
                 {group.capabilities.map((capability) => (

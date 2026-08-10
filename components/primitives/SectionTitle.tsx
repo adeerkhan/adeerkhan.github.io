@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { GlitchText } from "@/components/primitives/GlitchText";
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ export function SectionTitle({ children, className }: SectionTitleProps) {
         className,
       )}
     >
-      {children}
+      <GlitchText>{children}</GlitchText>
     </h2>
   );
 }
