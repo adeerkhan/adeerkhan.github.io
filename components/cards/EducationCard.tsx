@@ -43,7 +43,8 @@ export function EducationCard({
                   href={link}
                   target="_blank"
                   rel="noreferrer"
-                  className="transition-colors duration-200 hover:text-terminal-signal"
+                  className="glitch"
+                  data-text={schoolName}
                 >
                   {schoolName}
                 </a>

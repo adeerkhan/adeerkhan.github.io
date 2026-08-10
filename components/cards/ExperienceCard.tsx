@@ -60,7 +60,8 @@ export function ExperienceCard({
 							href={link}
 							target="_blank"
 							rel="noreferrer"
-							className="transition-colors duration-200 hover:text-terminal-signal"
+							className="glitch"
+							data-text={company}
 						>
 							{company}
 						</a>
