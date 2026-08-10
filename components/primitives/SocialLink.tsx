@@ -25,8 +25,8 @@ export function SocialLink({
       aria-label={label}
       className={cn(
         showLabel
-          ? "flex items-center gap-2 border border-terminal-border px-4 py-2 font-mono text-xs text-terminal-dim transition-colors duration-200 hover:border-terminal-signal hover:text-terminal-signal"
-          : "flex h-9 w-9 items-center justify-center border border-terminal-border text-terminal-dim transition-colors duration-200 hover:border-terminal-signal hover:text-terminal-signal",
+          ? "flex items-center gap-2 border border-terminal-border px-4 py-2 font-mono text-xs text-terminal-dim transition-colors duration-200 hover:border-terminal-signal hover:bg-terminal-signal hover:text-terminal-bg"
+          : "flex h-9 w-9 items-center justify-center border border-terminal-border text-terminal-dim transition-colors duration-200 hover:border-terminal-signal hover:bg-terminal-signal hover:text-terminal-bg",
         className,
       )}
     >
