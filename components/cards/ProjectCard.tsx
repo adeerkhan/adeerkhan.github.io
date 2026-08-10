@@ -28,13 +28,27 @@ export function ProjectCard({
     <BrutalCard className="flex h-full flex-col">
       {image ? (
         <div className="relative -m-6 mb-4 aspect-[16/10] w-[calc(100%+3rem)] overflow-hidden border-b border-terminal-border">
-          <Image
-            src={image}
-            alt={name}
-            fill
-            className="object-cover"
-            sizes="(min-width: 768px) 50vw, 100vw"
-          />
+          {image.endsWith(".mp4") ? (
+            <video
+              src={image}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="h-full w-full object-cover"
+              aria-hidden
+            />
+          ) : (
+            <Image
+              src={image}
+              alt={name}
+              fill
+              loading="lazy"
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          )}
         </div>
       ) : null}
       <p className="mb-3 font-mono text-xs text-terminal-signal">

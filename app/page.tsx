@@ -61,7 +61,7 @@ export default async function Home() {
       <SectionWrapper id="publications" num="06">
         <PublicationsSection />
       </SectionWrapper>
-      <SectionWrapper id="contact" num="07">
+      <SectionWrapper id="contact" num="07" className="pb-6 md:pb-12">
         <ContactSection github={github} />
       </SectionWrapper>
     </PageShell>

@@ -1,7 +1,7 @@
 export const projects = [
   {
     name: "Digital Twin",
-    image: "/img/projects/digital.gif",
+    image: "/img/projects/digital.mp4",
     desc: "A Unity3D-based digital twin system using MQTT for real-time bidirectional communication, visualization, and control between physical devices (Arduino/ESP32 sensors and actuators) and their virtual counterparts.",
   },
   {
@@ -24,24 +24,24 @@ export const projects = [
   },
   {
     name: "Al-Bahar Tower Facades",
-    image: "/img/projects/Al-Bahar_Tower.gif",
+    image: "/img/projects/al-bahar.mp4",
     desc: "Designed the mechanical facades of Al-Bahar Tower in Rhino with parametric programming in Grasshopper, integrating Ladybug Tools to simulate facades opening and closing in response to the sun's path.",
     link: "https://www.instagram.com/zaland3d/?hl=en",
   },
   {
     name: "Game Development in Unity3D",
-    image: "/img/projects/game.gif",
+    image: "/img/projects/game.mp4",
     desc: "A Unity3D project from the Computer Graphics Theory and Application (GCT522) course exploring procedural generation and shader-based weather effects in a dynamic environment.",
   },
   {
     name: "Architectural Visualization",
-    image: "/img/projects/Archi-Render.png",
+    image: "/img/projects/archi-render.jpg",
     desc: "Building modeled in SketchUp and visualization render done in Enscape 3D.",
     link: "https://www.instagram.com/zaland3d/?hl=en",
   },
   {
     name: "Point Cloud Rendering",
-    image: "/img/projects/point_cloud_render.png",
+    image: "/img/projects/point-cloud.jpg",
     desc: "Visualization of a point cloud model and a hillside tourist bridge in SketchUp, rendered in Enscape 3D.",
     link: "https://www.instagram.com/zaland3d/?hl=en",
   },
