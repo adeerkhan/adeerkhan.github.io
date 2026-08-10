@@ -7,6 +7,7 @@ interface ExperienceCardProps {
   role: string;
   date: string;
   companyLogo: string;
+  link?: string;
   desc: string;
   descBullets?: string[];
 }
@@ -34,6 +35,7 @@ export function ExperienceCard({
 	role,
 	date,
 	companyLogo,
+	link,
 	desc,
 	descBullets,
 }: ExperienceCardProps) {
@@ -51,10 +53,21 @@ export function ExperienceCard({
 						/>
 					</div>
 				) : null}
-				<div>
-					<h3 className="font-mono text-lg font-bold uppercase text-terminal-text">
-						{company}
-					</h3>
+			<div>
+				<h3 className="font-mono text-lg font-bold uppercase text-terminal-text">
+					{link ? (
+						<a
+							href={link}
+							target="_blank"
+							rel="noreferrer"
+							className="transition-colors duration-200 hover:text-terminal-signal"
+						>
+							{company}
+						</a>
+					) : (
+						company
+					)}
+				</h3>
 					<p className="mt-1 text-xs uppercase tracking-widest text-terminal-signal">
 						{role}
 					</p>

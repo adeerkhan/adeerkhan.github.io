@@ -6,6 +6,7 @@ interface EducationCardProps {
   duration: string;
   grade?: string;
   schoolLogo?: string;
+  link?: string;
   desc?: string;
   descBullets?: string[];
 }
@@ -16,6 +17,7 @@ export function EducationCard({
   duration,
   grade,
   schoolLogo,
+  link,
   desc,
   descBullets,
 }: EducationCardProps) {
@@ -36,7 +38,18 @@ export function EducationCard({
           ) : null}
           <div>
             <h3 className="font-mono text-xl font-bold uppercase text-terminal-text">
-              {schoolName}
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors duration-200 hover:text-terminal-signal"
+                >
+                  {schoolName}
+                </a>
+              ) : (
+                schoolName
+              )}
             </h3>
             <p className="mt-2 text-sm text-terminal-soft">{subHeader}</p>
           </div>
