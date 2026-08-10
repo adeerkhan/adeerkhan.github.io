@@ -42,7 +42,7 @@
   --terminal-green: #00FF41;
   --terminal-amber: #FFB800;
   --terminal-white: #FFFFFF;
-  --terminal-grid: rgba(255, 255, 255, 0.03);
+  --terminal-grid: rgba(255, 255, 255, 0.02);
 }
 
 .light {

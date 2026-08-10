@@ -3,8 +3,9 @@
 import { useEffect, useRef } from "react";
 
 const CELL = 40;
-const RADIUS = 60;
-const AMPLITUDE = 18;
+const RADIUS = 90;
+const AMPLITUDE = 14;
+const LINE_WIDTH = 1.5;
 const LERP = 0.35;
 
 export function GridSwizzle() {
@@ -18,9 +19,6 @@ export function GridSwizzle() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-
-    const grid = document.createElement("canvas");
-    const gctx = grid.getContext("2d");
 
     let width = 0;
     let height = 0;
@@ -43,77 +41,35 @@ export function GridSwizzle() {
       if (d >= RADIUS) return { x, y };
       const t = d / RADIUS;
       const falloff = (1 - t) * (1 - t);
-      const a = Math.atan2(dy, dx) + t * 2.4;
+      const a = Math.atan2(dy, dx) + t * 1.6;
       const amount = AMPLITUDE * falloff;
       return { x: x + Math.cos(a) * amount, y: y + Math.sin(a) * amount };
     };
 
-    const inRange = (x: number, y: number) => {
-      const dx = x - pos.x;
-      const dy = y - pos.y;
-      return dx * dx + dy * dy <= RADIUS * RADIUS;
-    };
-
-    const paintGrid = () => {
-      if (!gctx) return;
-      const dpr = window.devicePixelRatio || 1;
-      grid.width = Math.floor(width * dpr);
-      grid.height = Math.floor(height * dpr);
-      gctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      gctx.strokeStyle = color;
-      gctx.lineWidth = 1;
-      for (let gx = 0; gx <= width; gx += CELL) {
-        gctx.beginPath();
-        for (let gy = 0; gy <= height; gy += CELL) {
-          if (gy === 0) gctx.moveTo(gx, gy);
-          else gctx.lineTo(gx, gy);
-        }
-        gctx.stroke();
-      }
-      for (let gy = 0; gy <= height; gy += CELL) {
-        gctx.beginPath();
-        for (let gx = 0; gx <= width; gx += CELL) {
-          if (gx === 0) gctx.moveTo(gx, gy);
-          else gctx.lineTo(gx, gy);
-        }
-        gctx.stroke();
-      }
-    };
-
     const draw = () => {
-      if (!gctx) return;
       ctx.clearRect(0, 0, width, height);
-      ctx.drawImage(grid, 0, 0, width, height);
       ctx.strokeStyle = color;
-      ctx.lineWidth = 1;
+      ctx.lineWidth = LINE_WIDTH;
 
-      const gx0 = Math.max(0, Math.floor((pos.x - RADIUS) / CELL)) * CELL;
-      const gy0 = Math.max(0, Math.floor((pos.y - RADIUS) / CELL)) * CELL;
-      const gx1 = Math.min(width, Math.ceil((pos.x + RADIUS) / CELL) * CELL);
-      const gy1 = Math.min(height, Math.ceil((pos.y + RADIUS) / CELL) * CELL);
-      if (gx1 <= gx0 || gy1 <= gy0) return;
-
-      for (let gx = gx0; gx <= gx1; gx += CELL) {
+      for (let gx = 0; gx <= width; gx += CELL) {
         ctx.beginPath();
-        for (let gy = gy0; gy <= gy1; gy += CELL) {
-          const p1 = warp(gx, gy);
-          const p2 = warp(gx, gy + CELL);
-          if (inRange(gx, gy) || inRange(gx, gy + CELL)) {
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-          }
+        let started = false;
+        for (let gy = 0; gy <= height; gy += CELL) {
+          const p = warp(gx, gy);
+          if (started) ctx.lineTo(p.x, p.y);
+          else ctx.moveTo(p.x, p.y);
+          started = true;
         }
         ctx.stroke();
       }
-      for (let gy = gy0; gy <= gy1; gy += CELL) {
+      for (let gy = 0; gy <= height; gy += CELL) {
         ctx.beginPath();
-        for (let gx = gx0; gx <= gx1; gx += CELL) {
-          const p1 = warp(gx, gy);
-          const p2 = warp(gx + CELL, gy);
-          if (inRange(gx, gy) || inRange(gx + CELL, gy)) {
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-          }
+        let started = false;
+        for (let gx = 0; gx <= width; gx += CELL) {
+          const p = warp(gx, gy);
+          if (started) ctx.lineTo(p.x, p.y);
+          else ctx.moveTo(p.x, p.y);
+          started = true;
         }
         ctx.stroke();
       }
@@ -148,7 +104,6 @@ export function GridSwizzle() {
 
     const onTheme = () => {
       color = readColor();
-      paintGrid();
       draw();
     };
 
@@ -169,7 +124,6 @@ export function GridSwizzle() {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       color = readColor();
-      paintGrid();
       draw();
     };
 
