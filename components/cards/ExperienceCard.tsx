@@ -19,7 +19,7 @@ function renderBullet(text: string) {
         href={part}
         target="_blank"
         rel="noreferrer"
-        className="text-terminal-signal underline-offset-2 hover:underline"
+        className="text-terminal-signal underline transition-colors duration-200 hover:bg-terminal-signal hover:text-terminal-bg"
       >
         {part}
       </a>
