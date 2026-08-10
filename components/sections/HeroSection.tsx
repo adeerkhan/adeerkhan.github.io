@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { GlitchText } from "@/components/primitives/GlitchText";
+import { HeroProfile } from "@/components/primitives/HeroProfile";
 import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SocialLink } from "@/components/primitives/SocialLink";
 import { TerminalLine } from "@/components/primitives/TerminalLine";
@@ -45,16 +46,19 @@ export function HeroSection() {
     >
       <div className="relative z-10 my-auto max-w-5xl pb-8 md:my-0 md:pb-8">
         <SectionLabel num="01" />
-        <h1 className="font-mono text-[clamp(40px,9vw,140px)] font-bold leading-none text-terminal-text">
-          <span className="block whitespace-nowrap">
-            <GlitchText>{`${hero.greeting} I'M`}</GlitchText>
-          </span>
-          <span className="block whitespace-nowrap">
-            <span className="glitch" data-text={hero.name}>
-              <TerminalLine text={hero.name} cursor />
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <h1 className="font-mono text-[clamp(40px,9vw,140px)] font-bold leading-none text-terminal-text">
+            <span className="block whitespace-nowrap">
+              <GlitchText>{`${hero.greeting} I'M`}</GlitchText>
             </span>
-          </span>
-        </h1>
+            <span className="block whitespace-nowrap">
+              <span className="glitch" data-text={hero.name}>
+                <TerminalLine text={hero.name} cursor />
+              </span>
+            </span>
+          </h1>
+          <HeroProfile />
+        </div>
         <p className="mt-8 max-w-xl whitespace-pre-line border-l-2 border-terminal-signal pl-4 text-sm leading-relaxed text-terminal-soft">
           <TypewriterText text={hero.description} />
         </p>
