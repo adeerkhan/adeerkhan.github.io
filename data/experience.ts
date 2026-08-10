@@ -1,12 +1,12 @@
 export const experience = [
 	{
 		company: "NeoBIM GMBH",
-		role: "AI Research Engineer",
+		role: "AI Research & Development",
 		date: "Oct 2023 - Present",
 		companyLogo: "/img/neobim.jpg",
 		desc: "Lead AI research and development for a BIM startup in Germany.",
 		descBullets: [
-			"Designing LLM-integrated digital twin systems and automated design workflows.",
+			"Designing LLM-integrated digital twin systems and automated design workflows. https://designer.bluebrick.ai/",
 			"Applying generative AI to architecture, engineering, and construction.",
 		],
 	},

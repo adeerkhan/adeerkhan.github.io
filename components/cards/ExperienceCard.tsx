@@ -3,12 +3,30 @@ import Image from "next/image";
 import { BrutalCard } from "@/components/primitives/BrutalCard";
 
 interface ExperienceCardProps {
-	company: string;
-	role: string;
-	date: string;
-	companyLogo: string;
-	desc: string;
-	descBullets?: string[];
+  company: string;
+  role: string;
+  date: string;
+  companyLogo: string;
+  desc: string;
+  descBullets?: string[];
+}
+
+function renderBullet(text: string) {
+  return text.split(/(https?:\/\/\S+)/g).map((part, index) =>
+    /^https?:\/\//.test(part) ? (
+      <a
+        key={index}
+        href={part}
+        target="_blank"
+        rel="noreferrer"
+        className="text-terminal-signal underline-offset-2 hover:underline"
+      >
+        {part}
+      </a>
+    ) : (
+      <span key={index}>{part}</span>
+    ),
+  );
 }
 
 export function ExperienceCard({
@@ -60,7 +78,7 @@ export function ExperienceCard({
 							className="flex gap-2 text-xs text-terminal-soft"
 						>
 							<span className="text-terminal-signal">-</span>
-							<span>{bullet}</span>
+							<span>{renderBullet(bullet)}</span>
 						</li>
 					))}
 				</ul>

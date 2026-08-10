@@ -49,11 +49,11 @@ export default async function Home() {
       <SectionWrapper id="skills" num="02">
         <SkillsSection />
       </SectionWrapper>
-      <SectionWrapper id="education" num="03">
-        <EducationSection />
-      </SectionWrapper>
-      <SectionWrapper id="experience" num="04">
+      <SectionWrapper id="experience" num="03">
         <ExperienceSection />
+      </SectionWrapper>
+      <SectionWrapper id="education" num="04">
+        <EducationSection />
       </SectionWrapper>
       <SectionWrapper id="projects" num="05">
         <ProjectsSection />
