@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 const CELL = 40;
 const RADIUS = 90;
 const AMPLITUDE = 14;
-const LINE_WIDTH = 1.5;
+const DOT_RADIUS = 2;
 const LERP = 0.35;
 
 export function GridSwizzle() {
@@ -22,11 +22,11 @@ export function GridSwizzle() {
 
     let width = 0;
     let height = 0;
-    let color = "rgba(255,255,255,0.03)";
+    let color = "#2A2A2A";
 
     const readColor = () =>
       getComputedStyle(document.documentElement)
-        .getPropertyValue("--terminal-grid")
+        .getPropertyValue("--terminal-border")
         .trim() || color;
 
     const mouse = { x: -9999, y: -9999 };
@@ -48,30 +48,15 @@ export function GridSwizzle() {
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      ctx.strokeStyle = color;
-      ctx.lineWidth = LINE_WIDTH;
+      ctx.fillStyle = color;
 
       for (let gx = 0; gx <= width; gx += CELL) {
-        ctx.beginPath();
-        let started = false;
         for (let gy = 0; gy <= height; gy += CELL) {
           const p = warp(gx, gy);
-          if (started) ctx.lineTo(p.x, p.y);
-          else ctx.moveTo(p.x, p.y);
-          started = true;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, DOT_RADIUS, 0, Math.PI * 2);
+          ctx.fill();
         }
-        ctx.stroke();
-      }
-      for (let gy = 0; gy <= height; gy += CELL) {
-        ctx.beginPath();
-        let started = false;
-        for (let gx = 0; gx <= width; gx += CELL) {
-          const p = warp(gx, gy);
-          if (started) ctx.lineTo(p.x, p.y);
-          else ctx.moveTo(p.x, p.y);
-          started = true;
-        }
-        ctx.stroke();
       }
     };
 
