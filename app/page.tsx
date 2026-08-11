@@ -46,22 +46,22 @@ export default async function Home() {
     <PageShell>
       <NavBar />
       <HeroSection />
-      <SectionWrapper id="skills" num="02">
+      <SectionWrapper id="skills">
         <SkillsSection />
       </SectionWrapper>
-      <SectionWrapper id="experience" num="03">
+      <SectionWrapper id="experience">
         <ExperienceSection />
       </SectionWrapper>
-      <SectionWrapper id="education" num="04">
+      <SectionWrapper id="education">
         <EducationSection />
       </SectionWrapper>
-      <SectionWrapper id="projects" num="05">
+      <SectionWrapper id="projects">
         <ProjectsSection />
       </SectionWrapper>
-      <SectionWrapper id="publications" num="06">
+      <SectionWrapper id="publications">
         <PublicationsSection />
       </SectionWrapper>
-      <SectionWrapper id="contact" num="07" className="pb-6 md:pb-12">
+      <SectionWrapper id="contact" className="pb-6 md:pb-12">
         <ContactSection github={github} />
       </SectionWrapper>
     </PageShell>

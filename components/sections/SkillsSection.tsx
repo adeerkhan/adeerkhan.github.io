@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SectionTitle } from "@/components/primitives/SectionTitle";
 import { SkillBadge } from "@/components/primitives/SkillBadge";
 import { GlitchText } from "@/components/primitives/GlitchText";
@@ -14,7 +12,6 @@ export function SkillsSection() {
 
   return (
     <div ref={ref}>
-      <SectionLabel num="02" />
       <SectionTitle>WHAT I DO.</SectionTitle>
       <p className="max-w-2xl font-mono text-sm uppercase leading-relaxed tracking-widest text-terminal-soft">
         AI &amp; ML researcher working on generative AI, LLM-integrated digital

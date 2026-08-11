@@ -131,21 +131,6 @@ describe("Plan.md portfolio requirements", () => {
     expect(source).toContain("md:pt-24");
   });
 
-  it("keeps decorative section wrapper numbers out of the content start area", async () => {
-    const source = await import("node:fs/promises").then((fs) =>
-      fs.readFile(
-        new URL("../components/layout/SectionWrapper.tsx", import.meta.url),
-        "utf8",
-      ),
-    );
-
-    expect(source).toContain("top-3");
-    expect(source).toContain("text-[48px]");
-    expect(source).toContain("md:top-2");
-    expect(source).toContain("md:text-[80px]");
-    expect(source).toContain("aria-hidden");
-  });
-
   it("keeps software skill badges focused and readable", () => {
     const badgeNames = skillGroups.flatMap((group) =>
       group.softwareSkills.map((skill) => skill.skillName),

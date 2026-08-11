@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 import { ProjectCard } from "@/components/cards/ProjectCard";
-import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SectionTitle } from "@/components/primitives/SectionTitle";
 import { useInViewOnce } from "@/hooks/use-in-view-once";
 import { projects } from "@/data/projects";
@@ -13,7 +12,6 @@ export function ProjectsSection() {
 
   return (
     <div ref={ref}>
-      <SectionLabel num="05" />
       <SectionTitle>PROJECTS.</SectionTitle>
       <motion.div
         className="grid gap-4 md:grid-cols-3"

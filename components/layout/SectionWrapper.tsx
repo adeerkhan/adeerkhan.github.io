@@ -7,14 +7,12 @@ import { useInViewOnce } from "@/hooks/use-in-view-once";
 
 interface SectionWrapperProps {
   id: string;
-  num: string;
   children: React.ReactNode;
   className?: string;
 }
 
 export function SectionWrapper({
   id,
-  num,
   children,
   className = "",
 }: SectionWrapperProps) {
@@ -29,12 +27,6 @@ export function SectionWrapper({
         className,
       )}
     >
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute right-6 top-3 select-none font-mono text-[48px] font-bold leading-none text-terminal-border md:right-8 md:top-2 md:text-[80px]"
-      >
-        {num}
-      </span>
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}

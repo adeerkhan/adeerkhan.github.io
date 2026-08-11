@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { GlitchText } from "@/components/primitives/GlitchText";
 import { HeroProfile } from "@/components/primitives/HeroProfile";
-import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SocialLink } from "@/components/primitives/SocialLink";
 import { TerminalLine } from "@/components/primitives/TerminalLine";
 import { TypewriterText } from "@/components/primitives/TypewriterText";
@@ -45,7 +44,6 @@ export function HeroSection() {
       className="relative flex min-h-[100svh] flex-col justify-start overflow-hidden px-6 pb-0 pt-20 md:min-h-screen md:justify-end md:px-12 md:pt-24"
     >
       <div className="relative z-10 my-auto max-w-5xl pb-8 md:my-0 md:pb-8">
-        <SectionLabel num="01" />
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <h1 className="font-mono text-[clamp(40px,9vw,140px)] font-bold leading-none text-terminal-text">
             <span className="block whitespace-nowrap">

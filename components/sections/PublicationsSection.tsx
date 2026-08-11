@@ -1,6 +1,4 @@
 import { ExternalLink } from "lucide-react";
-
-import { SectionLabel } from "@/components/primitives/SectionLabel";
 import { SectionTitle } from "@/components/primitives/SectionTitle";
 import { publications } from "@/data/publications";
 
@@ -9,7 +7,6 @@ import { publications } from "@/data/publications";
 export function PublicationsSection() {
   return (
     <div>
-      <SectionLabel num="06" />
       <SectionTitle>PUBLICATIONS.</SectionTitle>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {publications.map((pub) => {
