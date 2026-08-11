@@ -1,63 +1,60 @@
 export const skillGroups = [
   {
-    title: "Machine Learning & Deep Learning",
+    title: "Development & AI Integration",
+    iconifyTag: "mdi:layers-triple",
+    accent: "var(--terminal-green)",
+    headline: "Custom tools, workflows, and AI agents.",
+    summary:
+      "Connecting models, systems, and people across AEC workflows with practical AI integration.",
     capabilities: [
       "Training and evaluating deep learning models for vision, robustness, and generative tasks",
       "Designing neural network layers, including a network coding layer (NNCL) that recovers erased features under extreme erasure (IEEE Access, 2025)",
       "Applying ML to spatio-temporal and engineering data, e.g. ANN-CA urban growth modeling (EJRS, 2022)",
+      "Generative AI for automated building design and AEC workflows across diffusion, autoregressive, and hybrid models",
+      "LLM-integrated digital twin systems for management, adaptive control, and human-AI collaboration in architecture",
+      "Building conversational agents with LangChain and OpenAI APIs",
     ],
     softwareSkills: [
       { skillName: "Python", iconifyTag: "logos:python" },
       { skillName: "PyTorch", iconifyTag: "logos:pytorch-icon" },
       { skillName: "TensorFlow", iconifyTag: "logos:tensorflow" },
       { skillName: "scikit-learn", iconifyTag: "logos:scikit-learn" },
-      { skillName: "Jupyter", iconifyTag: "logos:jupyter" },
-      { skillName: "NumPy", iconifyTag: "logos:numpy" },
-      { skillName: "Pandas", iconifyTag: "devicon:pandas" },
-    ],
-  },
-  {
-    title: "Generative AI & LLMs",
-    capabilities: [
-      "Generative AI for automated building design and AEC workflows across diffusion, autoregressive, and hybrid models",
-      "LLM-integrated digital twin systems for management, adaptive control, and human-AI collaboration in architecture",
-      "Building conversational agents with LangChain and OpenAI APIs",
-    ],
-    softwareSkills: [
       { skillName: "Hugging Face", iconifyTag: "simple-icons:huggingface" },
       { skillName: "LangChain", iconifyTag: "simple-icons:langchain" },
       { skillName: "OpenAI", iconifyTag: "simple-icons:openai" },
-      { skillName: "Streamlit", iconifyTag: "logos:streamlit" },
     ],
   },
   {
-    title: "Computer Vision & 3D",
+    title: "Urban Intelligence",
+    iconifyTag: "mdi:chart-line",
+    accent: "#9B5DE5",
+    headline: "From simulation to decision.",
+    summary:
+      "Turning spatial, visual, and environmental data into clearer decisions for intelligent built environments.",
     capabilities: [
       "Face recognition with deep embeddings (EE488B, KAIST)",
       "Point cloud rendering and architectural visualization in SketchUp and Enscape 3D",
       "Real-time digital twin communication with MQTT in Unity 3D",
-    ],
-    softwareSkills: [
-      { skillName: "OpenCV", iconifyTag: "devicon:opencv" },
-      { skillName: "Unity", iconifyTag: "simple-icons:unity" },
-      { skillName: "C#", iconifyTag: "logos:c-sharp" },
-    ],
-  },
-  {
-    title: "Geospatial & Spatial Data Science",
-    capabilities: [
       "Land use / land cover classification and urban growth modeling with random forests and ANN-CA",
       "Satellite imagery analysis and future-scenario simulation with QGIS and MOLUSCE",
       "Parametric environmental simulation with Rhino, Grasshopper, and Ladybug Tools",
     ],
     softwareSkills: [
+      { skillName: "OpenCV", iconifyTag: "devicon:opencv" },
+      { skillName: "Unity", iconifyTag: "simple-icons:unity" },
+      { skillName: "C#", iconifyTag: "logos:c-sharp" },
       { skillName: "QGIS", iconifyTag: "simple-icons:qgis" },
       { skillName: "R", iconifyTag: "logos:r-lang" },
       { skillName: "Git", iconifyTag: "logos:git-icon" },
     ],
   },
   {
-    title: "Research & Engineering",
+    title: "Rapid Prototyping",
+    iconifyTag: "mdi:flash-outline",
+    accent: "#F72585",
+    headline: "Prototype fast. Customize at scale.",
+    summary:
+      "Moving research into working demos, reproducible systems, and production-ready experiments.",
     capabilities: [
       "Peer-reviewed publication in Automation in Construction (Q1), IEEE Access, and EJRS",
       "Structural health monitoring and experimental validation",

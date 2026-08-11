@@ -26,11 +26,9 @@ describe("Plan.md portfolio requirements", () => {
     expect(socialLinks.github).toBe("https://github.com/adeerkhan");
     expect(socialLinks.email).toBe("mailto:adeersafi@gmail.com");
     expect(skillGroups.map((group) => group.title)).toEqual([
-      "Machine Learning & Deep Learning",
-      "Generative AI & LLMs",
-      "Computer Vision & 3D",
-      "Geospatial & Spatial Data Science",
-      "Research & Engineering",
+      "Development & AI Integration",
+      "Urban Intelligence",
+      "Rapid Prototyping",
     ]);
     expect(
       skillGroups.flatMap((group) =>
@@ -66,7 +64,7 @@ describe("Plan.md portfolio requirements", () => {
     expect(css).toContain(".glitch:hover::before");
   });
 
-  it("uses consistent vertical rhythm between skill groups", async () => {
+  it("renders three What I Do cards", async () => {
     const source = await import("node:fs/promises").then((fs) =>
       fs.readFile(
         new URL("../components/sections/SkillsSection.tsx", import.meta.url),
@@ -74,7 +72,7 @@ describe("Plan.md portfolio requirements", () => {
       ),
     );
 
-    expect(source).toContain("space-y-12 md:space-y-16");
+    expect(source).toContain("grid gap-5 md:grid-cols-3");
   });
 
   it("stretches project cards to consistent row heights", async () => {
