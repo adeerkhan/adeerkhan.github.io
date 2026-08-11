@@ -19,9 +19,13 @@ export const skillGroups = [
       { skillName: "PyTorch", iconifyTag: "logos:pytorch-icon" },
       { skillName: "TensorFlow", iconifyTag: "logos:tensorflow" },
       { skillName: "scikit-learn", iconifyTag: "logos:scikit-learn" },
+      { skillName: "Jupyter", iconifyTag: "logos:jupyter" },
+      { skillName: "NumPy", iconifyTag: "logos:numpy" },
+      { skillName: "Pandas", iconifyTag: "devicon:pandas" },
       { skillName: "Hugging Face", iconifyTag: "simple-icons:huggingface" },
       { skillName: "LangChain", iconifyTag: "simple-icons:langchain" },
       { skillName: "OpenAI", iconifyTag: "simple-icons:openai" },
+      { skillName: "Streamlit", iconifyTag: "logos:streamlit" },
     ],
   },
   {

@@ -49,6 +49,15 @@ export function SkillsSection() {
               {group.summary}
             </p>
 
+            <ul className="mt-6 space-y-2 text-xs leading-relaxed text-terminal-soft">
+              {group.capabilities.map((capability) => (
+                <li key={capability} className="flex gap-2">
+                  <span className="text-terminal-signal">-</span>
+                  <span>{capability}</span>
+                </li>
+              ))}
+            </ul>
+
             <div className="mt-auto flex flex-wrap gap-2 pt-8">
               {group.softwareSkills.map((skill) => (
                 <SkillBadge key={skill.skillName} {...skill} />

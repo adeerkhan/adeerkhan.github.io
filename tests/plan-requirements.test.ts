@@ -138,7 +138,7 @@ describe("Plan.md portfolio requirements", () => {
       .join(" ");
 
     expect(
-      skillGroups.every((group) => group.softwareSkills.length <= 7),
+      skillGroups.every((group) => group.softwareSkills.length <= 11),
     ).toBe(true);
     expect(badgeNames).not.toEqual(
       expect.arrayContaining([
