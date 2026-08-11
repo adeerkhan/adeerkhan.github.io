@@ -156,7 +156,7 @@ a {
 
 .glitch:hover::after {
   opacity: 0.8;
-  color: var(--terminal-green);
+  color: #F4D35E;
   animation: glitch 0.4s steps(1) 0.1s infinite;
 }
 
@@ -182,7 +182,7 @@ a {
 
 .profile-glitch:hover::after {
   opacity: 0.8;
-  border-color: var(--terminal-green);
+  border-color: #F4D35E;
   animation: glitch-frame 0.4s steps(1) 0.1s infinite;
 }
 

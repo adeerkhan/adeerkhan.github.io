@@ -46,7 +46,7 @@ export function NavBar() {
       <nav className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 md:px-12">
         <a
           href="#hero"
-          className="font-mono text-lg font-bold tracking-wider text-terminal-text"
+          className="font-mono text-lg font-bold tracking-wider text-terminal-text transition-all duration-200 hover:[text-shadow:0_0_10px_var(--terminal-signal),0_0_24px_var(--terminal-signal)]"
         >
           <span className="text-terminal-signal">&gt;</span>{" "}
           <GlitchText>ADEER_KHAN</GlitchText>
@@ -56,7 +56,7 @@ export function NavBar() {
             <a
               key={label}
               href={href}
-              className="font-mono text-xs uppercase tracking-widest text-terminal-dim transition-colors duration-200 hover:text-terminal-signal"
+              className="font-mono text-xs uppercase tracking-widest text-terminal-dim transition-all duration-200 hover:text-terminal-text hover:[text-shadow:0_0_8px_var(--terminal-signal),0_0_20px_var(--terminal-signal)]"
             >
               {label}
             </a>
