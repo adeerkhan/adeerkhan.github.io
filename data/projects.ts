@@ -1,5 +1,10 @@
 export const projects = [
   {
+    name: "AI Designer",
+    image: "/img/projects/ai-designer.mp4",
+    desc: "An AI-driven design workflow that generates architectural concepts from text prompts.",
+  },
+  {
     name: "Site IFC Generation",
     image: "/img/projects/site-ifc-generation.mp4",
     desc: "Automated generation of IFC site models for BIM workflows, converting site data directly into building-information models.",
