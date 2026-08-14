@@ -21,7 +21,7 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
         if (entry.isIntersecting) video.play().catch(() => {});
         else video.pause();
       },
-      { threshold: 0.1 },
+      { threshold: 0.5 },
     );
     observer.observe(video);
     return () => observer.disconnect();

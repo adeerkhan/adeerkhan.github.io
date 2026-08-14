@@ -2,8 +2,9 @@
 
 import { useEffect, useRef } from "react";
 
-const DOT_SMOOTHNESS = 0.2;
-const RING_SMOOTHNESS = 0.1;
+const DOT_SMOOTHNESS = 0.35;
+const RING_SMOOTHNESS = 0.3;
+const IDLE_MS = 400;
 
 export function SmoothCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -30,6 +31,8 @@ export function SmoothCursor() {
     const onMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
+      lastMove = performance.now();
+      if (!raf) raf = requestAnimationFrame(animate);
     };
     const onEnter = () => {
       hovering = true;
@@ -41,7 +44,9 @@ export function SmoothCursor() {
     const targets = document.querySelectorAll("a, button, input, textarea, select");
 
     let raf = 0;
+    let lastMove = performance.now();
     const animate = () => {
+      raf = 0;
       dotPos.x = lerp(dotPos.x, mouse.x, DOT_SMOOTHNESS);
       dotPos.y = lerp(dotPos.y, mouse.y, DOT_SMOOTHNESS);
       ringPos.x = lerp(ringPos.x, mouse.x, RING_SMOOTHNESS);
@@ -55,7 +60,9 @@ export function SmoothCursor() {
         ring.style.width = "28px";
         ring.style.height = "28px";
       }
-      raf = requestAnimationFrame(animate);
+      if (performance.now() - lastMove < IDLE_MS) {
+        raf = requestAnimationFrame(animate);
+      }
     };
 
     window.addEventListener("mousemove", onMove);

@@ -50,8 +50,10 @@ export function GridSwizzle() {
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = color;
 
+      const top = Math.floor(window.scrollY / CELL) * CELL;
+      const bottom = window.scrollY + window.innerHeight;
       for (let gx = 0; gx <= width; gx += CELL) {
-        for (let gy = 0; gy <= height; gy += CELL) {
+        for (let gy = top; gy <= bottom; gy += CELL) {
           const p = warp(gx, gy);
           ctx.beginPath();
           ctx.arc(p.x, p.y, DOT_RADIUS, 0, Math.PI * 2);
@@ -62,7 +64,14 @@ export function GridSwizzle() {
 
     let raf = 0;
     let scheduled = false;
+    let lastDrawX = -9999;
+    let lastDrawY = -9999;
     const requestDraw = () => {
+      const dx = pos.x - lastDrawX;
+      const dy = pos.y - lastDrawY;
+      if (dx * dx + dy * dy < 1) return;
+      lastDrawX = pos.x;
+      lastDrawY = pos.y;
       if (scheduled) return;
       scheduled = true;
       raf = requestAnimationFrame(() => {
