@@ -1,5 +1,25 @@
 export const projects = [
   {
+    name: "Site IFC Generation",
+    image: "/img/projects/site-ifc-generation.mp4",
+    desc: "Automated generation of IFC site models for BIM workflows, converting site data directly into building-information models.",
+  },
+  {
+    name: "MeshGPT Generation",
+    image: "/img/projects/meshgpt-generation.mp4",
+    desc: "MeshGPT-based generation of 3D building meshes, using a decoder-only transformer to predict triangle meshes directly.",
+  },
+  {
+    name: "Floorplan Generation",
+    image: "/img/projects/floorplan-generation.mp4",
+    desc: "Deep-learning-based floor plan generation that produces residential layouts from input constraints and design prompts.",
+  },
+  {
+    name: "ComfyUI",
+    image: "/img/projects/comfyui.mp4",
+    desc: "Generative AI workflows built in ComfyUI for architectural visualization and rapid design iteration.",
+  },
+  {
     name: "Digital Twin",
     image: "/img/projects/digital.mp4",
     desc: "A Unity3D-based digital twin system using MQTT for real-time bidirectional communication, visualization, and control between physical devices (Arduino/ESP32 sensors and actuators) and their virtual counterparts.",

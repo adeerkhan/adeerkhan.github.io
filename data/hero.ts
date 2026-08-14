@@ -6,7 +6,7 @@ export const hero = {
   resumeLink: "/CV-Adeer-Khan.pdf",
   stats: [
     { value: 4, suffix: "+", label: "Publications" },
-    { value: 8, suffix: "+", label: "Projects" },
+    { value: 12, suffix: "+", label: "Projects" },
     { value: 2, suffix: "", label: "National Awards" },
   ],
 };

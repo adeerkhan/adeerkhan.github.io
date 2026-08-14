@@ -20,7 +20,7 @@ describe("Plan.md portfolio requirements", () => {
     expect(hero.name).toBe("ADEER KHAN");
     expect(hero.stats).toEqual([
       { value: 4, suffix: "+", label: "Publications" },
-      { value: 8, suffix: "+", label: "Projects" },
+      { value: 12, suffix: "+", label: "Projects" },
       { value: 2, suffix: "", label: "National Awards" },
     ]);
     expect(socialLinks.github).toBe("https://github.com/adeerkhan");
@@ -95,7 +95,7 @@ describe("Plan.md portfolio requirements", () => {
     expect(cardSource).toContain('className="flex h-full flex-col"');
   });
 
-  it("keeps the contact avatar aligned responsively", async () => {
+  it("centers contact content with no photo", async () => {
     const source = await import("node:fs/promises").then((fs) =>
       fs.readFile(
         new URL("../components/sections/ContactSection.tsx", import.meta.url),
@@ -103,13 +103,10 @@ describe("Plan.md portfolio requirements", () => {
       ),
     );
 
-    expect(source).toContain("md:items-start");
-    expect(source).toContain("mx-auto");
-    expect(source).toContain("md:ml-auto");
-    expect(source).toContain("aspect-square");
-    expect(source).toContain("sm:w-48");
-    expect(source).toContain("md:w-56");
-    expect(source).toContain("lg:w-64");
+    expect(source).toContain("items-center");
+    expect(source).toContain("text-center");
+    expect(source).not.toContain("aspect-square");
+    expect(source).not.toContain("avatar");
   });
 
   it("centers mobile hero text vertically without changing desktop alignment", async () => {

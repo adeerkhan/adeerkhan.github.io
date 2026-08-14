@@ -75,6 +75,13 @@ export function HeroSection() {
             icon="mdi:instagram"
             label="Instagram"
           />
+          <Button asChild>
+            <a href="#projects">[ VIEW WORK ]</a>
+          </Button>
+          <Button asChild>
+            <a href="#contact">[ GET IN TOUCH ]</a>
+          </Button>
+          <SocialLink href={socialLinks.email} icon="mdi:email" label="Email" />
         </div>
       </div>
       <div className="relative z-10 grid grid-cols-3 border-t border-terminal-border">
