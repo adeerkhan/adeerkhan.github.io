@@ -14,7 +14,6 @@
     "@iconify/react": "latest",
     "@radix-ui/react-slot": "latest",
     "clsx": "latest",
-    "framer-motion": "latest",
     "lucide-react": "latest",
     "next": "latest",
     "react": "latest",

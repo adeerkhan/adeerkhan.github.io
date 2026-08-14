@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 
 interface TerminalLineProps {
@@ -16,23 +14,16 @@ export function TerminalLine({
   cursor = false,
 }: TerminalLineProps) {
   return (
-    <motion.span
-      className={cn(cursor && "cursor", className)}
-      initial="hidden"
-      animate="show"
-      variants={{
-        hidden: {},
-        show: { transition: { staggerChildren: 0.1 } },
-      }}
-    >
+    <span className={cn(cursor && "cursor", className)}>
       {text.split("").map((char, index) => (
-        <motion.span
+        <span
           key={`${char}-${index}`}
-          variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+          className="terminal-char"
+          style={{ animationDelay: `${index * 0.1}s` }}
         >
           {char}
-        </motion.span>
+        </span>
       ))}
-    </motion.span>
+    </span>
   );
 }

@@ -8,14 +8,13 @@ import "./globals.css";
 const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
-  style: ["normal", "italic"],
   variable: "--font-space-mono",
   display: "swap",
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400"],
   variable: "--font-ibm-plex-mono",
   display: "swap",
 });

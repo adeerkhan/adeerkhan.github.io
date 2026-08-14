@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useState } from "react";
+
+import { useInViewOnce } from "@/hooks/use-in-view-once";
 
 export function useCountUp(target: number) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const { ref, isInView } = useInViewOnce();
   const [count, setCount] = useState(0);
 
   useEffect(() => {

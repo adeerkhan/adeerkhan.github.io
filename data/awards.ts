@@ -1,10 +1,4 @@
-export interface Award {
-  title: string;
-  institution: string;
-  desc: string;
-}
-
-export const awards: Award[] = [
+export const awards = [
   {
     title: "KAIST International Scholarship",
     institution: "Korea Advanced Institute of Science and Technology",

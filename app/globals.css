@@ -128,6 +128,16 @@ a {
   animation: blink 1s step-start infinite;
 }
 
+.terminal-char {
+  display: inline-block;
+  opacity: 0;
+  animation: terminal-char-in 0.5s ease forwards;
+}
+
+@keyframes terminal-char-in {
+  to { opacity: 1; }
+}
+
 .cursor::after {
   content: "_";
   animation: blink 1s step-start infinite;

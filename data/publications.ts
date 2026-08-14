@@ -1,11 +1,4 @@
-export interface Publication {
-  title: string;
-  venue: string;
-  year: number;
-  doi?: string;
-}
-
-export const publications: Publication[] = [
+export const publications = [
   {
     title: "Generative AI approaches for architectural design automation",
     venue: "Automation in Construction",
