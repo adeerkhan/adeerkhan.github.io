@@ -7,6 +7,6 @@ export const hero = {
   stats: [
     { value: 4, suffix: "+", label: "Publications" },
     { value: 12, suffix: "+", label: "Projects" },
-    { value: 2, suffix: "", label: "National Awards" },
+    { value: 3, suffix: "", label: "National Awards" },
   ],
 };

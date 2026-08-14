@@ -21,7 +21,7 @@ describe("Plan.md portfolio requirements", () => {
     expect(hero.stats).toEqual([
       { value: 4, suffix: "+", label: "Publications" },
       { value: 12, suffix: "+", label: "Projects" },
-      { value: 2, suffix: "", label: "National Awards" },
+      { value: 3, suffix: "", label: "National Awards" },
     ]);
     expect(socialLinks.github).toBe("https://github.com/adeerkhan");
     expect(socialLinks.email).toBe("mailto:adeersafi@gmail.com");

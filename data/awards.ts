@@ -16,6 +16,11 @@ export const awards: Award[] = [
     desc: "Awarded for overall best achievement in extra- and co-curricular activities.",
   },
   {
+    title: "Participant of South Asian Quiz Contest CMC Quiz Mania - 5",
+    institution: "Kathmandu, Nepal",
+    desc: "Represented Pakistan in Quiz Mania which was telecasted on Nepal TV.",
+  },
+  {
     title: "National Level Distinction in Final Year Design Project",
     institution: "Pakistan Engineering Council",
     desc: "Awarded 2nd prize at Pakistan Engineering Council's Engineering Capstone Expo 2022.",
@@ -34,11 +39,6 @@ export const awards: Award[] = [
     title: "Runner Up — SUPARCO World Space Week 2022 Pakistan",
     institution: "SUPARCO",
     desc: "Secured 2nd position in SDG Video Contest on Sustainable Human Footprint.",
-  },
-  {
-    title: "Participant of South Asian Quiz Contest CMC Quiz Mania - 5",
-    institution: "Kathmandu, Nepal",
-    desc: "Represented Pakistan in Quiz Mania which was telecasted on Nepal TV.",
   },
   {
     title: "Chancellor's Honor Roll",
