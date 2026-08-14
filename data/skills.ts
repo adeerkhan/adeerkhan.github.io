@@ -7,12 +7,10 @@ export const skillGroups = [
     summary:
       "Connecting models, systems, and people across AEC workflows with practical AI integration.",
     capabilities: [
-      "Training and evaluating deep learning models for vision, robustness, and generative tasks",
-      "Designing neural network layers, including a network coding layer (NNCL) that recovers erased features under extreme erasure (IEEE Access, 2025)",
-      "Applying ML to spatio-temporal and engineering data, e.g. ANN-CA urban growth modeling (EJRS, 2022)",
-      "Generative AI for automated building design and AEC workflows across diffusion, autoregressive, and hybrid models",
-      "LLM-integrated digital twin systems for management, adaptive control, and human-AI collaboration in architecture",
-      "Building conversational agents with LangChain and OpenAI APIs",
+      "Trained and evaluated deep learning models for vision, robustness, and generative tasks",
+      "Built LLM-integrated digital twin systems for intelligent building management, control, and human-AI collaboration",
+      "Applied generative AI across diffusion, autoregressive, and hybrid models to automate building design and AEC workflows",
+      "Developed conversational agents with LangChain and OpenAI APIs",
     ],
     softwareSkills: [
       { skillName: "Python", iconifyTag: "logos:python" },
