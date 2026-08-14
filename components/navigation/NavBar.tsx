@@ -9,8 +9,10 @@ import { ThemeToggle } from "@/components/primitives/ThemeToggle";
 import { socialLinks } from "@/data/social";
 
 const sectionLinks = [
-  { href: "#skills", label: "WORK" },
+  { href: "#skills", label: "SKILLS" },
   { href: "#experience", label: "EXPERIENCE" },
+  { href: "#projects", label: "PROJECTS" },
+  { href: "#awards", label: "AWARDS" },
   { href: "#contact", label: "CONTACT" },
 ];
 
@@ -51,7 +53,7 @@ export function NavBar() {
           <span className="text-terminal-signal">&gt;</span>{" "}
           <GlitchText>ADEER_KHAN</GlitchText>
         </a>
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           {sectionLinks.map(({ href, label }) => (
             <a
               key={label}
@@ -77,7 +79,7 @@ export function NavBar() {
             <ThemeToggle />
           </div>
         </div>
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <ThemeToggle />
           <button
             type="button"
@@ -91,7 +93,7 @@ export function NavBar() {
         </div>
       </nav>
       {open ? (
-        <div className="border-b border-terminal-border bg-terminal-surface md:hidden">
+        <div className="border-b border-terminal-border bg-terminal-surface lg:hidden">
           {sectionLinks.map(({ href, label }) => (
             <a
               key={label}

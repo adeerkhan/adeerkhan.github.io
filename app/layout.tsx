@@ -44,7 +44,7 @@ const seoData = {
     "Portfolio",
   ],
   url: "https://adeerkhan.github.io",
-  image: "https://github.com/adeerkhan.png",
+  image: "/og.png",
 };
 
 export const metadata: Metadata = {
@@ -89,8 +89,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: seoData.image,
-        width: 460,
-        height: 460,
+        width: 1200,
+        height: 630,
         alt: seoData.author,
       },
     ],
