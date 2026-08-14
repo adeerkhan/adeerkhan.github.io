@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
 interface ProjectVideoProps {
@@ -10,6 +10,21 @@ interface ProjectVideoProps {
 
 export function ProjectVideo({ src, name }: ProjectVideoProps) {
   const [open, setOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -29,8 +44,8 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
         className="h-full w-full cursor-zoom-in"
       >
         <video
+          ref={videoRef}
           src={src}
-          autoPlay
           muted
           loop
           playsInline
