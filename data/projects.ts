@@ -31,18 +31,6 @@ export const projects = [
     github: "https://github.com/adeerkhan/Face-Embedding",
   },
   {
-    name: "Podcast Summarizer",
-    image: "/img/projects/podcast_sum.jpg",
-    desc: "OpenAI GPT-based podcast summarizer with a cloud-deployed backend and a Streamlit frontend. Paste any podcast RSS feed to get summaries and highlights.",
-    link: "https://podcast-summarize.streamlit.app",
-  },
-  {
-    name: "Talk with Images",
-    image: "/img/projects/talk_with_image.jpg",
-    desc: "A Streamlit app that answers questions about uploaded images through a LangChain and OpenAI GPT conversational agent.",
-    github: "https://github.com/adeerkhan/talk-with-image",
-  },
-  {
     name: "Al-Bahar Tower Facades",
     image: "/img/projects/al-bahar.mp4",
     desc: "Designed the mechanical facades of Al-Bahar Tower in Rhino with parametric programming in Grasshopper, integrating Ladybug Tools to simulate facades opening and closing in response to the sun's path.",
@@ -64,5 +52,17 @@ export const projects = [
     image: "/img/projects/point-cloud.jpg",
     desc: "Visualization of a point cloud model and a hillside tourist bridge in SketchUp, rendered in Enscape 3D.",
     link: "https://www.instagram.com/zaland3d/?hl=en",
+  },
+  {
+    name: "Podcast Summarizer",
+    image: "/img/projects/podcast_sum.jpg",
+    desc: "OpenAI GPT-based podcast summarizer with a cloud-deployed backend and a Streamlit frontend. Paste any podcast RSS feed to get summaries and highlights.",
+    link: "https://podcast-summarize.streamlit.app",
+  },
+  {
+    name: "Talk with Images",
+    image: "/img/projects/talk_with_image.jpg",
+    desc: "A Streamlit app that answers questions about uploaded images through a LangChain and OpenAI GPT conversational agent.",
+    github: "https://github.com/adeerkhan/talk-with-image",
   },
 ];
