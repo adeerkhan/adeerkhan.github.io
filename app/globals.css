@@ -129,13 +129,20 @@ a {
 }
 
 .terminal-char {
-  display: inline-block;
+  display: inline;
   opacity: 0;
   animation: terminal-char-in 0.5s ease forwards;
 }
 
 @keyframes terminal-char-in {
   to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-char {
+    opacity: 1;
+    animation: none;
+  }
 }
 
 .cursor::after {
