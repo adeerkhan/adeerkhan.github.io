@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react";
 
 import { BrutalCard } from "@/components/primitives/BrutalCard";
 import { GlitchText } from "@/components/primitives/GlitchText";
+import { ProjectVideo } from "@/components/primitives/ProjectVideo";
 
 interface ProjectCardProps {
   name: string;
@@ -29,16 +30,7 @@ export function ProjectCard({
       {image ? (
         <div className="relative -m-6 mb-4 aspect-[16/10] w-[calc(100%+3rem)] overflow-hidden border-b border-terminal-border">
           {image.endsWith(".mp4") ? (
-            <video
-              src={image}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover"
-              aria-hidden
-            />
+            <ProjectVideo src={image} name={name} />
           ) : (
             <Image
               src={image}
