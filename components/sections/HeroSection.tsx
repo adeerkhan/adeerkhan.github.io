@@ -3,11 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { GlitchText } from "@/components/primitives/GlitchText";
 import { HeroProfile } from "@/components/primitives/HeroProfile";
-import { SocialLink } from "@/components/primitives/SocialLink";
+import { StackDropdown } from "@/components/navigation/StackDropdown";
 import { TerminalLine } from "@/components/primitives/TerminalLine";
 import { TypewriterText } from "@/components/primitives/TypewriterText";
 import { hero } from "@/data/hero";
-import { socialLinks } from "@/data/social";
 import { useCountUp } from "@/hooks/use-count-up";
 
 function StatItem({
@@ -64,17 +63,7 @@ export function HeroSection() {
           <Button asChild>
             <a href={hero.resumeLink}>[ SEE MY RESUME ]</a>
           </Button>
-          <SocialLink href={socialLinks.github} icon="mdi:github" label="GitHub" />
-          <SocialLink
-            href={socialLinks.linkedin}
-            icon="mdi:linkedin"
-            label="LinkedIn"
-          />
-          <SocialLink
-            href={socialLinks.instagram}
-            icon="mdi:instagram"
-            label="Instagram"
-          />
+          <StackDropdown />
           <Button asChild>
             <a href="#projects">[ VIEW WORK ]</a>
           </Button>

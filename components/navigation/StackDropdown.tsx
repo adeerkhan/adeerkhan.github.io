@@ -2,6 +2,7 @@
 
 import { Icon } from "@iconify/react";
 
+import { Button } from "@/components/ui/button";
 import { stackGroups, type StackSkill } from "@/data/stack";
 
 function StackChip({ skill }: { skill: StackSkill }) {
@@ -18,14 +19,11 @@ function StackChip({ skill }: { skill: StackSkill }) {
 export function StackDropdown() {
   return (
     <div className="group relative">
-      <button
-        type="button"
-        aria-haspopup="true"
-        className="font-mono text-xs uppercase tracking-widest text-terminal-dim transition-all duration-200 hover:text-terminal-text hover:[text-shadow:0_0_8px_var(--terminal-signal),0_0_20px_var(--terminal-signal)]"
-      >
+      <Button type="button" aria-haspopup="true">
+        <Icon icon="ph:stack" width={16} height={16} aria-hidden />
         Stack
-      </button>
-      <div className="invisible absolute right-0 top-full z-50 w-[640px] max-w-[90vw] translate-y-1 border border-terminal-border bg-terminal-surface/95 opacity-0 shadow-2xl backdrop-blur transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+      </Button>
+      <div className="invisible absolute left-0 top-full z-50 w-[640px] max-w-[90vw] translate-y-1 border border-terminal-border bg-terminal-surface/95 opacity-0 shadow-2xl backdrop-blur transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
         <div className="border-b border-terminal-border px-6 py-4 font-mono text-xs uppercase tracking-widest text-terminal-dim">
           <span className="text-terminal-signal">&gt;</span> Tech Stack
         </div>
