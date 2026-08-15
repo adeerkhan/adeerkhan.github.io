@@ -25,7 +25,12 @@ export function StackDropdown() {
   const closeTimer = useRef<number | null>(null);
   const [hovered, setHovered] = useState(false);
   const [pinned, setPinned] = useState(false);
-  const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
+  const [pos, setPos] = useState<{
+    top?: number;
+    bottom?: number;
+    left: number;
+    maxHeight: string;
+  } | null>(null);
 
   const open = hovered || pinned;
 
@@ -44,11 +49,20 @@ export function StackDropdown() {
       8,
       Math.min(rect.left, window.innerWidth - PANEL_WIDTH - 8),
     );
+    const spaceAbove = rect.top - 8;
     const spaceBelow = window.innerHeight - rect.bottom - 8;
-    if (spaceBelow > 300) {
-      setPos({ top: rect.bottom + 8, left });
+    if (spaceAbove >= 300 || spaceAbove > spaceBelow) {
+      setPos({
+        bottom: window.innerHeight - rect.top + 8,
+        left,
+        maxHeight: `${Math.max(100, spaceAbove)}px`,
+      });
     } else {
-      setPos({ top: Math.max(8, rect.top - 8), left });
+      setPos({
+        top: rect.bottom + 8,
+        left,
+        maxHeight: `${Math.max(100, spaceBelow)}px`,
+      });
     }
   };
 
@@ -98,10 +112,11 @@ export function StackDropdown() {
       className="fixed z-[70] overflow-y-auto border border-terminal-border bg-terminal-surface shadow-2xl"
       style={{
         top: pos.top,
+        bottom: pos.bottom,
         left: pos.left,
         width: PANEL_WIDTH,
         maxWidth: "calc(100vw - 16px)",
-        maxHeight: `calc(100vh - ${pos.top}px - 16px)`,
+        maxHeight: pos.maxHeight,
       }}
       onMouseEnter={show}
       onMouseLeave={scheduleHide}
