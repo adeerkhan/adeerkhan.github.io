@@ -77,12 +77,8 @@ export const stackGroups: StackGroup[] = [
       { name: "AWS", iconifyTag: "logos:aws" },
       { name: "Linux", iconifyTag: "logos:linux-tux" },
       { name: "Cloudflare", iconifyTag: "simple-icons:cloudflare" },
+      { name: "SQLite", iconifyTag: "simple-icons:sqlite" },
       { name: "CI/CD · DevOps", iconifyTag: "simple-icons:githubactions" },
     ],
-  },
-  {
-    title: "Databases",
-    accent: "#0F7FCC",
-    skills: [{ name: "SQLite", iconifyTag: "simple-icons:sqlite" }],
   },
 ];
