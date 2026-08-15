@@ -3,24 +3,24 @@ export const skillGroups = [
     title: "Development & AI Integration",
     iconifyTag: "mdi:layers-triple",
     accent: "var(--terminal-green)",
-    headline: "Custom tools, workflows, and AI agents.",
+    headline: "Research-driven engineering for the built world.",
     summary:
-      "Connecting models, systems, and people across AEC workflows with practical AI integration.",
+      "Applying AI research to AEC workflows — LLM-integrated systems, digital twins, and automation tooling.",
   },
   {
-    title: "Urban Intelligence",
-    iconifyTag: "mdi:chart-line",
+    title: "Generative AI & Design Automation",
+    iconifyTag: "mdi:auto-fix",
     accent: "#9B5DE5",
-    headline: "From simulation to decision.",
+    headline: "Training and shipping generative design models.",
     summary:
-      "Turning spatial, visual, and environmental data into clearer decisions for intelligent built environments.",
+      "Diffusion, transformers, and 3D Gaussian splatting for automated floorplans, building meshes, and text-to-3D in AEC.",
   },
   {
-    title: "Rapid Prototyping",
-    iconifyTag: "mdi:flash-outline",
+    title: "Experimentation & Prototyping",
+    iconifyTag: "mdi:flask-outline",
     accent: "#F72585",
-    headline: "Prototype fast. Customize at scale.",
+    headline: "From research paper to working demo.",
     summary:
-      "Moving research into working demos, reproducible systems, and production-ready experiments.",
+      "Evaluating and fine-tuning models, then shipping reproducible prototypes and production-ready experiments.",
   },
 ];
