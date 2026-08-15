@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 import { GlitchText } from "@/components/primitives/GlitchText";
 import { Reveal } from "@/components/primitives/Reveal";
 import { SectionTitle } from "@/components/primitives/SectionTitle";
-import { SkillBadge } from "@/components/primitives/SkillBadge";
 import { skillGroups } from "@/data/skills";
 
 export function SkillsSection() {
@@ -40,21 +39,6 @@ export function SkillsSection() {
               <p className="mt-8 text-base leading-relaxed text-terminal-soft">
                 {group.summary}
               </p>
-
-              <ul className="mt-6 space-y-2 text-xs leading-relaxed text-terminal-soft">
-                {group.capabilities.map((capability) => (
-                  <li key={capability} className="flex gap-2">
-                    <span className="text-terminal-signal">-</span>
-                    <span>{capability}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-auto flex flex-wrap gap-2 pt-8">
-                {group.softwareSkills.map((skill) => (
-                  <SkillBadge key={skill.skillName} {...skill} />
-                ))}
-              </div>
             </article>
           </Reveal>
         ))}
