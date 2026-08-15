@@ -35,7 +35,12 @@ export function StackDropdown() {
       8,
       Math.min(rect.left, window.innerWidth - PANEL_WIDTH - 8),
     );
-    setPos({ top: rect.bottom + 8, left });
+    const spaceBelow = window.innerHeight - rect.bottom - 8;
+    if (spaceBelow > 300) {
+      setPos({ top: rect.bottom + 8, left });
+    } else {
+      setPos({ top: Math.max(8, rect.top - 8), left });
+    }
   };
 
   const show = () => {
@@ -82,6 +87,7 @@ export function StackDropdown() {
         aria-haspopup="true"
         aria-expanded={open}
         onClick={togglePin}
+        className="border-terminal-border text-terminal-dim hover:bg-terminal-surface hover:text-terminal-text"
       >
         <Icon icon="ph:stack" width={16} height={16} aria-hidden />
         Stack
@@ -94,11 +100,11 @@ export function StackDropdown() {
             left: pos.left,
             width: PANEL_WIDTH,
             maxWidth: "calc(100vw - 16px)",
-            maxHeight: "calc(100vh - 16px)",
+            maxHeight: `calc(100vh - ${pos.top}px - 16px)`,
           }}
         >
           <div className="border-b border-terminal-border px-6 py-4 font-mono text-xs uppercase tracking-widest text-terminal-dim">
-            <span className="text-terminal-signal">{"//"}</span> Tech Stack
+            {"//"} Tech Stack
           </div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-6 px-6 py-6">
             {stackGroups.map((group) => (
