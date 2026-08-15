@@ -1,6 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -21,11 +22,19 @@ function StackChip({ skill }: { skill: StackSkill }) {
 
 export function StackDropdown() {
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const closeTimer = useRef<number | null>(null);
   const [hovered, setHovered] = useState(false);
   const [pinned, setPinned] = useState(false);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
 
   const open = hovered || pinned;
+
+  const clearCloseTimer = () => {
+    if (closeTimer.current !== null) {
+      window.clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
 
   const updatePos = () => {
     const el = buttonRef.current;
@@ -44,13 +53,18 @@ export function StackDropdown() {
   };
 
   const show = () => {
+    clearCloseTimer();
     updatePos();
     setHovered(true);
   };
-  const hide = () => setHovered(false);
+  const scheduleHide = () => {
+    clearCloseTimer();
+    closeTimer.current = window.setTimeout(() => setHovered(false), 150);
+  };
 
   const togglePin = () => {
     if (!pinned) {
+      clearCloseTimer();
       updatePos();
       setPinned(true);
     } else {
@@ -62,6 +76,8 @@ export function StackDropdown() {
     if (!pinned) return;
     const onDown = (event: MouseEvent) => {
       if (buttonRef.current?.contains(event.target as Node)) return;
+      const panel = document.getElementById("stack-panel");
+      if (panel?.contains(event.target as Node)) return;
       setPinned(false);
     };
     const onKey = (event: KeyboardEvent) => {
@@ -72,14 +88,54 @@ export function StackDropdown() {
     return () => {
       document.removeEventListener("mousedown", onDown);
       document.removeEventListener("keydown", onKey);
+      clearCloseTimer();
     };
   }, [pinned]);
+
+  const panel = open && pos ? (
+    <div
+      id="stack-panel"
+      className="fixed z-[70] overflow-y-auto border border-terminal-border bg-terminal-surface shadow-2xl"
+      style={{
+        top: pos.top,
+        left: pos.left,
+        width: PANEL_WIDTH,
+        maxWidth: "calc(100vw - 16px)",
+        maxHeight: `calc(100vh - ${pos.top}px - 16px)`,
+      }}
+      onMouseEnter={show}
+      onMouseLeave={scheduleHide}
+    >
+      <div className="border-b border-terminal-border px-6 py-4 font-mono text-xs uppercase tracking-widest text-terminal-dim">
+        {"//"} Tech Stack
+      </div>
+      <div className="grid grid-cols-2 gap-x-8 gap-y-6 px-6 py-6">
+        {stackGroups.map((group) => (
+          <div key={group.title}>
+            <h4 className="mb-3 font-mono text-[11px] font-bold uppercase tracking-widest text-terminal-text">
+              {group.title}
+            </h4>
+            {group.note ? (
+              <p className="mb-3 text-[11px] italic text-terminal-dim">
+                {group.note}
+              </p>
+            ) : null}
+            <div className="flex flex-wrap gap-2">
+              {group.skills.map((skill) => (
+                <StackChip key={skill.name} skill={skill} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ) : null;
 
   return (
     <div
       className="relative"
       onMouseEnter={show}
-      onMouseLeave={hide}
+      onMouseLeave={scheduleHide}
     >
       <Button
         ref={buttonRef}
@@ -87,46 +143,11 @@ export function StackDropdown() {
         aria-haspopup="true"
         aria-expanded={open}
         onClick={togglePin}
-        className="border-terminal-border text-terminal-dim hover:bg-terminal-surface hover:text-terminal-text"
       >
         <Icon icon="ph:stack" width={16} height={16} aria-hidden />
         Stack
       </Button>
-      {open && pos ? (
-        <div
-          className="fixed z-[60] overflow-y-auto border border-terminal-border bg-terminal-surface shadow-2xl"
-          style={{
-            top: pos.top,
-            left: pos.left,
-            width: PANEL_WIDTH,
-            maxWidth: "calc(100vw - 16px)",
-            maxHeight: `calc(100vh - ${pos.top}px - 16px)`,
-          }}
-        >
-          <div className="border-b border-terminal-border px-6 py-4 font-mono text-xs uppercase tracking-widest text-terminal-dim">
-            {"//"} Tech Stack
-          </div>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-6 px-6 py-6">
-            {stackGroups.map((group) => (
-              <div key={group.title}>
-                <h4 className="mb-3 font-mono text-[11px] font-bold uppercase tracking-widest text-terminal-text">
-                  {group.title}
-                </h4>
-                {group.note ? (
-                  <p className="mb-3 text-[11px] italic text-terminal-dim">
-                    {group.note}
-                  </p>
-                ) : null}
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <StackChip key={skill.name} skill={skill} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : null}
+      {typeof document !== "undefined" ? createPortal(panel, document.body) : null}
     </div>
   );
 }
