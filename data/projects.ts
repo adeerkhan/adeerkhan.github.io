@@ -67,7 +67,7 @@ export const projects = [
   {
     name: "Talk with Images",
     image: "/img/projects/talk_with_image.jpg",
-    desc: "A Streamlit app that answers questions about uploaded images through a LangChain and OpenAI GPT conversational agent.",
+    desc: "A Streamlit app that answers questions about uploaded images through a conversational agent.",
     github: "https://github.com/adeerkhan/talk-with-image",
   },
 ];

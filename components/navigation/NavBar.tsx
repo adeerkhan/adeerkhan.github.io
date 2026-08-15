@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 
 import { GlitchText } from "@/components/primitives/GlitchText";
 import { ThemeToggle } from "@/components/primitives/ThemeToggle";
+import { StackDropdown } from "@/components/navigation/StackDropdown";
 import { socialLinks } from "@/data/social";
 
 const sectionLinks = [
@@ -54,6 +55,7 @@ export function NavBar() {
           <GlitchText>ADEER_KHAN</GlitchText>
         </a>
         <div className="hidden items-center gap-5 lg:flex">
+          <StackDropdown />
           {sectionLinks.map(({ href, label }) => (
             <a
               key={label}

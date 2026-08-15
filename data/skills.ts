@@ -10,18 +10,16 @@ export const skillGroups = [
       "Trained and evaluated deep learning models for vision, robustness, and generative tasks",
       "Built LLM-integrated digital twin systems for intelligent building management, control, and human-AI collaboration",
       "Applied generative AI across diffusion, autoregressive, and hybrid models to automate building design and AEC workflows",
-      "Developed conversational agents with LangChain and OpenAI APIs",
     ],
     softwareSkills: [
       { skillName: "Python", iconifyTag: "logos:python" },
       { skillName: "PyTorch", iconifyTag: "logos:pytorch-icon" },
       { skillName: "TensorFlow", iconifyTag: "logos:tensorflow" },
-      { skillName: "scikit-learn", iconifyTag: "logos:scikit-learn" },
+      { skillName: "scikit-learn", iconifyTag: "simple-icons:scikitlearn" },
       { skillName: "Jupyter", iconifyTag: "logos:jupyter" },
       { skillName: "NumPy", iconifyTag: "logos:numpy" },
       { skillName: "Pandas", iconifyTag: "devicon:pandas" },
       { skillName: "Hugging Face", iconifyTag: "simple-icons:huggingface" },
-      { skillName: "LangChain", iconifyTag: "simple-icons:langchain" },
       { skillName: "OpenAI", iconifyTag: "simple-icons:openai" },
       { skillName: "Streamlit", iconifyTag: "logos:streamlit" },
     ],
@@ -34,7 +32,6 @@ export const skillGroups = [
     summary:
       "Turning spatial, visual, and environmental data into clearer decisions for intelligent built environments.",
     capabilities: [
-      "Face recognition with deep embeddings (EE488B, KAIST)",
       "Point cloud rendering and architectural visualization in SketchUp and Enscape 3D",
       "Real-time digital twin communication with MQTT in Unity 3D",
       "Land use / land cover classification and urban growth modeling with random forests and ANN-CA",
