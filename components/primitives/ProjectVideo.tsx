@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 interface ProjectVideoProps {
@@ -84,34 +85,36 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
         />
       </button>
       {open ? (
-        <div
-          ref={dialogRef}
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${name} video`}
-          tabIndex={-1}
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/90 p-4 outline-none md:p-10"
-        >
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            aria-label="Close"
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center border border-terminal-border bg-terminal-bg text-terminal-text transition-colors hover:border-terminal-signal hover:text-terminal-signal"
+        createPortal(
+          <div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${name} video`}
+            tabIndex={-1}
+            onClick={(event) => {
+              if (event.target === event.currentTarget) setOpen(false);
+            }}
+            className="fixed inset-0 z-[200] flex cursor-zoom-out items-center justify-center bg-black/90 p-4 outline-none md:p-10"
           >
-            <X size={18} aria-hidden />
-          </button>
-          <video
-            src={src}
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            onClick={(event) => event.stopPropagation()}
-            className="max-h-full max-w-full object-contain"
-          />
-        </div>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center border border-terminal-border bg-terminal-bg text-terminal-text transition-colors hover:border-terminal-signal hover:text-terminal-signal"
+            >
+              <X size={18} aria-hidden />
+            </button>
+            <video
+              src={src}
+              autoPlay
+              controls
+              playsInline
+              className="max-h-full max-w-full object-contain"
+            />
+          </div>,
+          document.body,
+        )
       ) : null}
     </>
   );
