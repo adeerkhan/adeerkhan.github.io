@@ -84,7 +84,7 @@ export function SmoothCursor() {
   }, []);
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-[100]">
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-[999]">
       <div
         ref={dotRef}
         className="absolute rounded-full bg-terminal-signal"
