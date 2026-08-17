@@ -29,7 +29,7 @@ export function PublicationsSection() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-2 inline-flex items-center gap-1 border border-terminal-border px-2 py-1 font-mono text-[10px] text-terminal-dim transition-colors hover:border-terminal-signal hover:text-terminal-signal"
+                    className="mt-2 inline-flex items-center gap-1 border border-terminal-border px-2 py-1 font-mono text-[10px] text-terminal-dim transition-colors duration-200 hover:border-terminal-signal hover:bg-terminal-signal hover:text-terminal-bg"
                   >
                     DOI <ExternalLink size={10} aria-hidden />
                   </a>
