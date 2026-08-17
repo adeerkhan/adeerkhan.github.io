@@ -60,7 +60,6 @@ export const stackGroups: StackGroup[] = [
   {
     title: "AI & Agents",
     accent: "#00FF41",
-    note: "Training & finetuning generative models",
     skills: [
       { name: "Cursor", iconifyTag: "simple-icons:cursor" },
       { name: "OpenCode", iconifyTag: "simple-icons:opencode" },

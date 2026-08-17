@@ -13,7 +13,7 @@ function StackChip({ skill }: { skill: StackSkill }) {
   return (
     <span className="inline-flex items-center gap-2 border border-terminal-border bg-terminal-elevated px-2.5 py-1 font-body text-xs text-terminal-soft transition-colors duration-200 hover:border-terminal-signal hover:text-terminal-signal">
       {skill.iconifyTag ? (
-        <Icon icon={skill.iconifyTag} width={16} height={16} aria-hidden />
+        <Icon icon={skill.iconifyTag} width={16} height={16} aria-hidden className="text-terminal-dim transition-colors duration-200 group-hover:text-terminal-signal" />
       ) : null}
       {skill.name}
     </span>

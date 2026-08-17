@@ -2,12 +2,12 @@ export const projects = [
   {
     name: "AI Designer",
     image: "/img/projects/ai-designer.mp4",
-    desc: "An AI-driven architectural design platform that transforms natural-language prompts into structured building designs and BIM-ready floor plans. Built a real-time collaborative design environment integrating multi-agent LLMs, geometric reasoning, and client-side IFC4 generation. Engineered the system using TypeScript, React, Cloudflare Workers, Durable Objects, and WebSockets for scalable, synchronized architectural workflows.",
+    desc: "An AI-driven architectural platform that transforms natural-language prompts into BIM-ready floor plans and building designs. Integrates multi-agent LLMs, geometric reasoning, and client-side IFC4 generation using TypeScript, React, and Cloudflare.",
   },
   {
     name: "Site IFC Generation",
     image: "/img/projects/site-ifc-generation.mp4",
-    desc: "Automated generation of IFC site models for BIM workflows, converting site data directly into building-information models.",
+    desc: "MeshGPT-based generation of 3D building meshes, using a decoder-only transformer to predict triangle meshes directly, trained on a custom 3D dataset created by converting RPLAN 2D floorplans into 3D building meshes.",
   },
   {
     name: "MeshGPT Generation",

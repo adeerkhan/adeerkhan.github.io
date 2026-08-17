@@ -19,14 +19,14 @@ export function SkillsSection() {
       <div className="grid gap-5 md:grid-cols-3">
         {skillGroups.map((group, index) => (
           <Reveal key={group.title} delay={index * 100}>
-            <article className="flex min-h-[430px] flex-col rounded-lg border border-terminal-border bg-terminal-surface p-6 transition-colors duration-300 hover:border-terminal-signal">
+            <article className="group flex min-h-[430px] flex-col rounded-lg border border-terminal-border bg-terminal-surface p-6 transition-colors duration-300 hover:border-terminal-signal">
               <div className="flex items-start gap-4">
                 <Icon
                   icon={group.iconifyTag}
                   width={34}
                   height={34}
                   aria-hidden
-                  style={{ color: group.accent }}
+                  className="text-terminal-dim transition-colors duration-200 group-hover:text-terminal-signal"
                 />
                 <h3 className="font-mono text-xl font-bold uppercase leading-tight text-terminal-text">
                   <GlitchText>{group.title}</GlitchText>
