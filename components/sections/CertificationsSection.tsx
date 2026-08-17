@@ -28,7 +28,7 @@ export function CertificationsSection() {
                 href={cert.link}
                 target="_blank"
                 rel="noreferrer"
-                className="block truncate font-mono text-sm font-bold text-terminal-text transition-colors duration-200 hover:text-red-500 hover:drop-shadow-[0_0_6px_rgba(239,68,68,0.6)]"
+                className="nav-glow block truncate font-mono text-sm font-bold text-terminal-text"
               >
                 {cert.name}
               </a>
