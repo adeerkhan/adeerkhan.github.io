@@ -2,21 +2,31 @@ export const certifications = [
   {
     name: "Machine Learning Specialization",
     issuer: "Stanford University",
-    icon: "logos:stanford",
+    logo: "/img/Stanford.png",
   },
   {
-    name: "Intro to Computer Vision & Image Processing",
+    name: "Introduction to Computer Vision & Image Processing",
     issuer: "IBM",
-    icon: "logos:ibm",
+    logo: "/img/IBM.png",
   },
   {
     name: "Imagery, Automation & Applications",
     issuer: "UC Davis",
-    icon: "logos:uc-davis",
+    logo: "/img/UCDavis.png",
   },
   {
-    name: "Intro to Deep Learning & Neural Networks with Keras",
+    name: "Introduction to Software Engineering",
     issuer: "IBM",
-    icon: "logos:ibm",
+    logo: "/img/IBM.png",
+  },
+  {
+    name: "Introduction to DevOps",
+    issuer: "IBM",
+    logo: "/img/IBM.png",
+  },
+  {
+    name: "ML Summer School 2026",
+    issuer: "Cohere Labs",
+    logo: "/img/CohereLabs.png",
   },
 ];

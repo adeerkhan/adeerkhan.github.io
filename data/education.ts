@@ -21,7 +21,6 @@ export const education = [
 		schoolName: "Capital University of Science and Technology (CUST)",
 		subHeader: "BSc in Civil Engineering",
 		duration: "Sep 2018 - Jul 2022",
-		grade: "Gold Medalist",
 		schoolLogo: "/img/cust.png",
 		link: "https://cust.edu.pk/",
 		desc: "Graduated as the overall best achiever of the university.",
