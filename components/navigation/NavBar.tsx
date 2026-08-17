@@ -30,7 +30,7 @@ export function NavBar() {
       <nav className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 md:px-12">
         <a
           href="#hero"
-          className="nav-glow font-body text-lg tracking-wider text-terminal-text"
+          className="nav-glow font-mono text-lg tracking-wider text-terminal-text"
         >
           <span className="text-terminal-signal">&gt;</span>{" "}
           <GlitchText>ADEER_KHAN</GlitchText>
@@ -40,7 +40,7 @@ export function NavBar() {
             <a
               key={label}
               href={href}
-              className="nav-glow font-body text-xs uppercase tracking-widest text-terminal-dim"
+              className="nav-glow font-mono text-xs uppercase tracking-widest text-terminal-dim"
             >
               {label}
             </a>
@@ -80,7 +80,7 @@ export function NavBar() {
             <a
               key={label}
               href={href}
-              className="block border-b border-terminal-border px-6 py-4 font-body text-xs text-terminal-dim transition-colors duration-200 hover:bg-terminal-signal hover:text-terminal-bg"
+              className="block border-b border-terminal-border px-6 py-4 font-mono text-xs text-terminal-dim transition-colors duration-200 hover:bg-terminal-signal hover:text-terminal-bg"
               onClick={() => setOpen(false)}
             >
               {label}
@@ -92,7 +92,7 @@ export function NavBar() {
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-between border-b border-terminal-border px-6 py-4 font-body text-xs text-terminal-dim transition-colors duration-200 hover:bg-terminal-signal hover:text-terminal-bg"
+              className="flex items-center justify-between border-b border-terminal-border px-6 py-4 font-mono text-xs text-terminal-dim transition-colors duration-200 hover:bg-terminal-signal hover:text-terminal-bg"
               onClick={() => setOpen(false)}
             >
               <span>{label}</span>
