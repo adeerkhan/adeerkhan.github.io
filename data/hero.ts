@@ -3,7 +3,7 @@ export const hero = {
   name: "ADEER KHAN",
   description:
     "AI researcher passionate about developing smart solutions for the built world — applying software engineering, machine learning, and AI to create innovative solutions.",
-  resumeLink: "/CV-Adeer-Khan.pdf",
+  resumeLink: "/Resume_Adeer.pdf",
   stats: [
     { value: 4, suffix: "+", label: "Publications" },
     { value: 12, suffix: "+", label: "Projects" },
