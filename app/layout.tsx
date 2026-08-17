@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Josefin_Sans, Poppins } from "next/font/google";
+import { IBM_Plex_Mono, Space_Mono } from "next/font/google";
 
 import { SmoothCursor } from "@/components/primitives/SmoothCursor";
 
 import "./globals.css";
 
-const josefinSans = Josefin_Sans({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  variable: "--font-josefin",
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 });
 
-const poppins = Poppins({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-poppins",
+  weight: ["300", "400"],
+  variable: "--font-ibm-plex-mono",
   display: "swap",
 });
 
@@ -112,7 +112,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${josefinSans.variable} ${poppins.variable}`}
+      className={`${spaceMono.variable} ${ibmPlexMono.variable}`}
     >
       <body className="bg-terminal-bg text-terminal-text antialiased">
         <script
