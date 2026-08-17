@@ -6,11 +6,15 @@ export const education = [
 		grade: "",
 		schoolLogo: "/img/kaist.png",
 		link: "https://www.kaist.ac.kr/en/",
-		desc: "Research on automated building design and LLM-integrated digital twins.",
+		desc: "Selected Coursework:",
 		descBullets: [
 			"CGPA: 3.50/4.30 (92/100%)",
-			"Generative AI approaches for automated architectural design (Automation in Construction, 2025).",
-			"LLM-integrated digital twin management and adaptive control for buildings.",
+			"IT for Smart City",
+			"Deep Learning for Computer Vision",
+			"Cyber-Physical Systems & Smart Spaces",
+			"Computer Graphics",
+			"Transportation System Analysis and Operations",
+			"Smart and Green Environmental Design",
 		],
 	},
 	{
