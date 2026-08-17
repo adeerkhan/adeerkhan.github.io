@@ -12,7 +12,7 @@ export const projects = [
   {
     name: "MeshGPT Generation",
     image: "/img/projects/meshgpt-generation.mp4",
-    desc: "MeshGPT-based generation of 3D building meshes, using a decoder-only transformer to predict triangle meshes directly.",
+    desc: "MeshGPT-based generation of 3D building meshes, using a decoder-only transformer to predict triangle meshes directly, trained on a custom 3D dataset created by converting RPLAN 2D floorplans into 3D building meshes.",
   },
   {
     name: "Floorplan Generation",

@@ -26,7 +26,7 @@ export function SkillsSection() {
                   width={34}
                   height={34}
                   aria-hidden
-                  className="text-terminal-dim transition-colors duration-200 group-hover:text-terminal-signal"
+                  style={{ color: group.accent }}
                 />
                 <h3 className="font-mono text-xl font-bold uppercase leading-tight text-terminal-text">
                   <GlitchText>{group.title}</GlitchText>

@@ -32,7 +32,7 @@ export function NavBar() {
           href="#hero"
           className="nav-glow font-mono text-lg tracking-wider text-terminal-text"
         >
-          <span className="text-terminal-signal">&gt;</span>{" "}
+          <span className="text-terminal-signal font-black text-xl">&gt;</span>{" "}
           <GlitchText>ADEER_KHAN</GlitchText>
         </a>
         <div className="hidden items-center gap-5 lg:flex">
