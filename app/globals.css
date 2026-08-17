@@ -14,9 +14,9 @@
   --color-terminal-green: var(--terminal-green);
   --color-terminal-amber: var(--terminal-amber);
   --color-terminal-white: var(--terminal-white);
-  --font-mono: var(--font-space-mono), "Space Mono", monospace;
-  --font-display: var(--font-space-mono), "Space Mono", monospace;
-  --font-body: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  --font-mono: var(--font-josefin), "Josefin Sans", sans-serif;
+  --font-display: var(--font-poppins), "Poppins", sans-serif;
+  --font-body: var(--font-josefin), "Josefin Sans", sans-serif;
   --spacing-section: 6rem;
   --spacing-section-sm: 3rem;
   --radius-none: 0px;
@@ -90,7 +90,7 @@ body {
   margin: 0;
   background: var(--terminal-bg);
   color: var(--terminal-text);
-  font-family: var(--font-ibm-plex-mono);
+  font-family: var(--font-josefin), "Josefin Sans", sans-serif;
   font-weight: 300;
   overflow-x: hidden;
 }
