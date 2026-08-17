@@ -2,7 +2,7 @@ export const projects = [
   {
     name: "AI Designer",
     image: "/img/projects/ai-designer.mp4",
-    desc: "An AI-driven design workflow that generates architectural concepts from text prompts.",
+    desc: "An AI-driven architectural design platform that transforms natural-language prompts into structured building designs and BIM-ready floor plans. Built a real-time collaborative design environment integrating multi-agent LLMs, geometric reasoning, and client-side IFC4 generation. Engineered the system using TypeScript, React, Cloudflare Workers, Durable Objects, and WebSockets for scalable, synchronized architectural workflows.",
   },
   {
     name: "Site IFC Generation",
@@ -17,12 +17,12 @@ export const projects = [
   {
     name: "Floorplan Generation",
     image: "/img/projects/floorplan-generation.mp4",
-    desc: "Deep-learning-based floor plan generation that produces residential layouts from input constraints and design prompts.",
+    desc: "LLM-based floor plan generation that produces residential layouts from text input, trained on 45K modified Swiss Dwellings dataset samples and design constraints, using a custom-built tokenizer and vocabulary with a 7B-parameter LLM.",
   },
   {
     name: "ComfyUI",
     image: "/img/projects/comfyui.mp4",
-    desc: "Generative AI workflows built in ComfyUI for architectural visualization and rapid design iteration.",
+    desc: "Generative AI workflows built in ComfyUI for architectural visualization, image-to-image generation, and rapid design iteration. Developed custom node-based pipelines integrating multiple generative models and conditioning workflows for controllable architectural outputs.",
   },
   {
     name: "Digital Twin",

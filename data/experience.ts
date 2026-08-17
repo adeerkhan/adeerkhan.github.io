@@ -7,7 +7,7 @@ export const experience = [
 		link: "https://neobim.ai/",
 		desc: "Lead AI research and development for a BIM startup in Germany.",
 		descBullets: [
-			"Designing LLM-integrated digital twin systems and automated design workflows. https://designer.bluebrick.ai/",
+			"Designing AI-driven architectural workflows that automate spatial planning, BIM generation, and design reasoning.  . https://designer.bluebrick.ai/",
 			"Specializing generative models for the AEC industry, developing floorplan generation systems using Diffusion models, Autoencoders, Transformers, and 3D Gaussian Splatting (image/text-to-3D conversion).",
 			"Evaluating 50+ generative AI repositories and fine-tuning models (Stable Diffusion, Flux, Mistral, Qwen, LLaMA) for scalable, domain-specific AEC design automation.",
 		],
