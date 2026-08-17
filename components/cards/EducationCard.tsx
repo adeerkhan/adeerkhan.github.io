@@ -68,14 +68,16 @@ export function EducationCard({
         <div className="mt-4 border-l-2 border-terminal-signal pl-4 text-sm text-terminal-soft">
           {desc ? <p>{desc}</p> : null}
           {descBullets?.length ? (
-            <ul className="mt-3 space-y-1">
+            <div className="mt-3 flex flex-wrap gap-2">
               {descBullets.map((bullet) => (
-                <li key={bullet} className="flex gap-2">
-                  <span className="text-terminal-signal">-</span>
-                  <span>{bullet}</span>
-                </li>
+                <span
+                  key={bullet}
+                  className="border border-terminal-border bg-terminal-elevated px-2.5 py-1 font-mono text-xs text-terminal-soft transition-colors duration-200 hover:border-terminal-signal hover:text-terminal-signal"
+                >
+                  {bullet}
+                </span>
               ))}
-            </ul>
+            </div>
           ) : null}
         </div>
       ) : null}
