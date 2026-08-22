@@ -23,16 +23,16 @@ export function GridSwizzle() {
     let width = 0;
     let height = 0;
     let color = "#2A2A2A";
+    let scrollY = window.scrollY;
 
     const readColor = () =>
       getComputedStyle(document.documentElement)
         .getPropertyValue("--terminal-border")
         .trim() || color;
 
+    // mouse in document coordinates (same as original)
     const mouse = { x: -9999, y: -9999 };
     const pos = { x: -9999, y: -9999 };
-    let lastClientX = 0;
-    let lastClientY = 0;
 
     const warp = (x: number, y: number) => {
       const dx = x - pos.x;
@@ -50,13 +50,17 @@ export function GridSwizzle() {
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = color;
 
-      const top = Math.floor(window.scrollY / CELL) * CELL;
-      const bottom = window.scrollY + window.innerHeight;
+      // draw dots at document coordinates so they scroll with the page
+      const top = Math.floor(scrollY / CELL) * CELL;
+      const bottom = scrollY + height;
       for (let gx = 0; gx <= width; gx += CELL) {
         for (let gy = top; gy <= bottom; gy += CELL) {
+          // screen position = document position - scroll offset
+          const sx = gx;
+          const sy = gy - scrollY;
           const p = warp(gx, gy);
           ctx.beginPath();
-          ctx.arc(p.x, p.y, DOT_RADIUS, 0, Math.PI * 2);
+          ctx.arc(sx + (p.x - gx), sy + (p.y - gy), DOT_RADIUS, 0, Math.PI * 2);
           ctx.fill();
         }
       }
@@ -81,18 +85,15 @@ export function GridSwizzle() {
     };
 
     const onMove = (e: MouseEvent) => {
-      lastClientX = e.clientX;
-      lastClientY = e.clientY;
-      mouse.x = lastClientX + window.scrollX;
-      mouse.y = lastClientY + window.scrollY;
+      mouse.x = e.clientX + window.scrollX;
+      mouse.y = e.clientY + window.scrollY;
       pos.x += (mouse.x - pos.x) * LERP;
       pos.y += (mouse.y - pos.y) * LERP;
       requestDraw();
     };
 
     const onScroll = () => {
-      pos.x = lastClientX + window.scrollX;
-      pos.y = lastClientY + window.scrollY;
+      scrollY = window.scrollY;
       requestDraw();
     };
 
@@ -103,11 +104,7 @@ export function GridSwizzle() {
 
     const rebuild = () => {
       const w = window.innerWidth;
-      const h = Math.max(
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-        window.innerHeight,
-      );
+      const h = window.innerHeight;
       if (w === width && h === height) return;
       width = w;
       height = h;
@@ -121,18 +118,16 @@ export function GridSwizzle() {
       draw();
     };
 
-    const parent = canvas.parentElement;
-    const ro = new ResizeObserver(() => rebuild());
-    if (parent) ro.observe(parent);
     window.addEventListener("mousemove", onMove);
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", rebuild);
     window.addEventListener("themechange", onTheme);
     rebuild();
 
     return () => {
-      ro.disconnect();
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", rebuild);
       window.removeEventListener("themechange", onTheme);
       cancelAnimationFrame(raf);
     };
@@ -142,7 +137,7 @@ export function GridSwizzle() {
     <canvas
       ref={canvasRef}
       aria-hidden
-      className="pointer-events-none absolute left-0 top-0 z-0"
+      className="pointer-events-none fixed left-0 top-0 z-0"
     />
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
@@ -14,19 +15,8 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {});
-        else video.pause();
-      },
-      { threshold: 0.5 },
-    );
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
+  const playVideo = () => videoRef.current?.play().catch(() => {});
+  const pauseVideo = () => videoRef.current?.pause();
 
   useEffect(() => {
     if (!open) return;
@@ -70,6 +60,8 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
       <button
         type="button"
         onClick={() => setOpen(true)}
+        onMouseEnter={playVideo}
+        onMouseLeave={pauseVideo}
         aria-label={`Zoom ${name}`}
         className="h-full w-full cursor-zoom-in"
       >

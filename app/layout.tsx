@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Space_Mono } from "next/font/google";
 
 import { SmoothCursor } from "@/components/primitives/SmoothCursor";
+import { IconRegistry } from "@/lib/icons";
 
 import "./globals.css";
 
@@ -120,6 +121,7 @@ export default function RootLayout({
             __html: `(function(){try{if(localStorage.getItem("theme")==="light")document.documentElement.classList.add("light")}catch(e){}})()`,
           }}
         />
+        <IconRegistry />
         <SmoothCursor />
         {children}
       </body>
