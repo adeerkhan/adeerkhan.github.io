@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Space_Mono } from "next/font/google";
 
 import { SmoothCursor } from "@/components/primitives/SmoothCursor";
-import { IconRegistry } from "@/lib/icons";
+import dynamic from "next/dynamic";
+
+const IconRegistry = dynamic(
+  () => import("@/lib/icons").then((mod) => mod.IconRegistry),
+  { ssr: false },
+);
 
 import "./globals.css";
 
