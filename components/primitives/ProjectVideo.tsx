@@ -14,6 +14,7 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
   const [open, setOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const poster = src.replace(/\.(mp4|webm)$/i, ".jpg");
 
   const playVideo = () => videoRef.current?.play().catch(() => {});
   const pauseVideo = () => videoRef.current?.pause();
@@ -68,6 +69,7 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
         <video
           ref={videoRef}
           src={src}
+          poster={poster}
           muted
           loop
           playsInline
