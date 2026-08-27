@@ -201,12 +201,14 @@ a {
   pointer-events: none;
 }
 
-.profile-glitch:hover::before {
+.profile-glitch:hover::before,
+.profile-glitch:focus-visible::before {
   opacity: 0.8;
   animation: glitch-frame 0.4s steps(1) infinite;
 }
 
-.profile-glitch:hover::after {
+.profile-glitch:hover::after,
+.profile-glitch:focus-visible::after {
   opacity: 0.8;
   border-color: #F4D35E;
   animation: glitch-frame 0.4s steps(1) 0.1s infinite;

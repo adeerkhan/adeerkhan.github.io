@@ -63,7 +63,7 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
         onMouseEnter={playVideo}
         onMouseLeave={pauseVideo}
         aria-label={`Zoom ${name}`}
-        className="h-full w-full cursor-zoom-in"
+        className="profile-glitch h-full w-full cursor-zoom-in"
       >
         <video
           ref={videoRef}
