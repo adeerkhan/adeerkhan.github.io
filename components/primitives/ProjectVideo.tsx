@@ -63,7 +63,7 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
         onMouseEnter={playVideo}
         onMouseLeave={pauseVideo}
         aria-label={`Zoom ${name}`}
-        className="profile-glitch h-full w-full cursor-zoom-in"
+        className="video-glitch h-full w-full cursor-zoom-in"
       >
         <video
           ref={videoRef}
@@ -71,7 +71,7 @@ export function ProjectVideo({ src, name }: ProjectVideoProps) {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           className="h-full w-full object-cover"
           aria-hidden
         />
