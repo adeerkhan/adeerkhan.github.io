@@ -1,6 +1,6 @@
 "use client";
 
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/primitives/Icon";
 
 import { GlitchText } from "@/components/primitives/GlitchText";
 import { Reveal } from "@/components/primitives/Reveal";

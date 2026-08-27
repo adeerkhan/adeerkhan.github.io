@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/primitives/Icon";
 import { Menu, X } from "lucide-react";
 
 import { GlitchText } from "@/components/primitives/GlitchText";

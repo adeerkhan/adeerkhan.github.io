@@ -1,4 +1,4 @@
-import { Icon as IconifyIcon } from "@iconify/react";
+import { Icon as IconifyIcon } from "@/components/primitives/Icon";
 
 import { cn } from "@/lib/utils";
 

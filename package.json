@@ -11,14 +11,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@iconify-json/devicon": "^1.2.62",
-    "@iconify-json/logos": "^1.2.13",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/ph": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.93",
-    "@iconify-json/thesvg": "^1.2.1",
-    "@iconify/react": "latest",
-    "@iconify/utils": "^3.1.4",
     "@radix-ui/react-slot": "latest",
     "clsx": "latest",
     "lucide-react": "latest",

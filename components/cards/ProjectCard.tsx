@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/primitives/Icon";
 import { ExternalLink } from "lucide-react";
 
 import { BrutalCard } from "@/components/primitives/BrutalCard";

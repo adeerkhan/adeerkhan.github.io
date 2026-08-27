@@ -1,6 +1,6 @@
 "use client";
 
-import { Icon } from "@iconify/react";
+import { Icon } from "@/components/primitives/Icon";
 import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 
