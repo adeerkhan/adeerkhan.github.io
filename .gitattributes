@@ -1,0 +1,21 @@
+# Normalize every text file to LF in the repository, on every platform.
+# This checkout had CRLF files on disk with no .gitattributes to enforce LF,
+# so git reported every text file as fully rewritten.
+* text=auto eol=lf
+
+# Binary assets: never run line-ending conversion on these.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.avif  binary
+*.ico   binary
+*.mp4   binary
+*.webm  binary
+*.mov   binary
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary

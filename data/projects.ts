@@ -1,5 +1,11 @@
 export const projects = [
   {
+    name: "Vitruvius",
+    image: "/img/projects/vitruvius.jpg",
+    desc: "An engineering research agent named for Marcus Vitruvius Pollio, running a discover → read → synthesize → verify → review loop with auditable provenance throughout. Covers 5 disciplines with 25 skills, and a blind verifier scored against an adversarial benchmark — 80% correct verdicts, 0 false approvals, 0 false blocks.",
+    github: "https://github.com/adeerkhan/vitruvius",
+  },
+  {
     name: "AI Designer",
     image: "/img/projects/ai-designer.mp4",
     desc: "An AI-driven architectural platform that transforms natural-language prompts into BIM-ready floor plans and building designs. Integrates multi-agent LLMs, geometric reasoning, and client-side IFC4 generation using TypeScript, React, and Cloudflare.",
